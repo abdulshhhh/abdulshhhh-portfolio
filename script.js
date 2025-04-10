@@ -473,135 +473,21 @@ if (skillsCanvas) {
         }, 300);
     });
 }
-
-// Achievements Section
-document.addEventListener('DOMContentLoaded', function() {
-    // Create achievements section if it doesn't exist
-    let achievementsSection = document.getElementById('achievements');
-    if (!achievementsSection) {
-        achievementsSection = document.createElement('section');
-        achievementsSection.id = 'achievements';
-        achievementsSection.className = 'section';
-        document.body.appendChild(achievementsSection);
-    }
-    
-    // Add cosmic overlay and effects
-    const cosmicOverlay = document.createElement('div');
-    cosmicOverlay.className = 'cosmic-overlay';
-    achievementsSection.appendChild(cosmicOverlay);
-    
-    // Add nebula effects
-    const nebula1 = document.createElement('div');
-    nebula1.className = 'nebula nebula-1';
-    achievementsSection.appendChild(nebula1);
-    
-    const nebula2 = document.createElement('div');
-    nebula2.className = 'nebula nebula-2';
-    achievementsSection.appendChild(nebula2);
-    
-    const nebula3 = document.createElement('div');
-    nebula3.className = 'nebula nebula-3';
-    achievementsSection.appendChild(nebula3);
-    
-    // Create particles container
-    const particlesContainer = document.createElement('div');
-    particlesContainer.id = 'achievements-particles';
-    achievementsSection.appendChild(particlesContainer);
-    
-    // Create section title with cosmic effect
-    const sectionTitleContainer = document.createElement('div');
-    sectionTitleContainer.className = 'section-title-container';
-    
-    const sectionTitle = document.createElement('h2');
-    sectionTitle.className = 'section-title';
-    sectionTitle.innerHTML = '<span class="title-text">Achievements</span><span class="neon-dot">.</span>';
-    sectionTitleContainer.appendChild(sectionTitle);
-    achievementsSection.appendChild(sectionTitleContainer);
-    
-    // Create achievements container
-    const achievementsContainer = document.createElement('div');
-    achievementsContainer.className = 'achievements-container';
-    achievementsSection.appendChild(achievementsContainer);
-    
-    // Achievement data
-    const achievements = [
-        {
-            title: "🚀 Hack A Cloud – 🏆 Champion",
-            description: "Designed and deployed a highly scalable, secure multi-cloud solution that won 1st place in a high-stakes hackathon. Our system leveraged AWS, Azure, and GCP for optimal redundancy, performance, and cost efficiency, featuring real-time monitoring, automated cloud optimization, and intelligent resource scaling.",
-            techStack: ["Multi-Cloud Architecture (AWS, Azure, GCP)", "AWS (EC2, S3, Lambda, CloudWatch, IAM)", "Azure Functions & Blob Storage", "Google Cloud Run & Firebase", "Node.js & Express.js (Backend)", "MongoDB (NoSQL Database)", "React.js & TailwindCSS (Frontend)", "CI/CD Pipelines (GitHub Actions, Docker, AWS CodePipeline)"],
-            impact: "Achieved seamless multi-cloud orchestration, reducing downtime risks by 60%, enhancing cloud efficiency, and automating resource scaling across providers.",
-            color: "#4F46E5"
-        },
-        {
-            title: "🎯 Innothon '24 – 🥈 2nd Place",
-            description: "Built a cutting-edge Smart Attendance System integrating geofencing, AI-powered face recognition, and real-time authentication. This innovation eliminated proxy attendance, ensuring 100% accuracy and security.",
-            techStack: ["Geofencing (AWS Location Service, GPS, Wi-Fi/Bluetooth triangulation)", "AI-Powered Face Recognition (OpenCV, AWS Rekognition)", "Real-time Backend (Firebase, Node.js, Express.js)", "Frontend Magic (HTML, CSS, JavaScript, Bootstrap)"],
-            impact: "Achieved seamless fraud-proof attendance tracking, merging biometric verification with geofencing-based authentication for institutions.",
-            color: "#10B981"
-        },
-        {
-            title: "👋 First-Year Orientation Host",
-            description: "Led a successful orientation program for freshmen, introducing them to tech communities, coding resources, and industry pathways.",
-            techStack: ["Community Building", "Technical Mentorship", "Resource Curation", "Event Management"],
-            impact: "Helped new students navigate their tech journey and build connections within the university's tech ecosystem.",
-            color: "#EC4899"
+document.addEventListener('DOMContentLoaded', function () {
+    // Smooth scroll to Achievements section
+    const link = document.querySelector('a[href="#achievements"]');
+    if (link) {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.getElementById('achievements');
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
         }
-    ];
-    
-    // Create achievement cards
-    achievements.forEach((achievement, index) => {
-        const achievementCard = document.createElement('div');
-        achievementCard.className = 'achievement-card';
-        achievementCard.setAttribute('data-index', index);
-        achievementCard.style.setProperty('--card-color', achievement.color);
-        
-        const achievementContent = `
-            <div class="achievement-header">
-                <h3>${achievement.title}</h3>
-            </div>
-            <div class="achievement-body">
-                <p class="description">${achievement.description}</p>
-                <div class="tech-stack">
-                    <h4>⚡ Tech Arsenal:</h4>
-                    <ul>
-                        ${achievement.techStack.map(tech => `<li>🔹 ${tech}</li>`).join('')}
-                    </ul>
-                </div>
-                <div class="impact">
-                    <h4>💡 Impact:</h4>
-                    <p>${achievement.impact}</p>
-                </div>
-            </div>
-            <div class="achievement-glow"></div>
-        `;
-        
-        achievementCard.innerHTML = achievementContent;
-        achievementsContainer.appendChild(achievementCard);
-        
-        // Add hover and click effects
-        achievementCard.addEventListener('mouseenter', () => {
-            achievementCard.classList.add('expanded');
-        });
-        
-        achievementCard.addEventListener('mouseleave', () => {
-            achievementCard.classList.remove('expanded');
-        });
-    });
-    
-    // Create stars
-    createStars(achievementsSection);
-    
-    // Add cosmic animation
-    addCosmicAnimation(achievementsSection);
-    
-    // Initialize particles
-    if (typeof particlesJS !== 'undefined') {
-        initParticles();
+      });
     }
-    
-    // Add custom cursor effect
-    addCustomCursor(achievementsSection);
-});
+  });
+  
+
 
 // Function to create stars in the background
 function createStars(section) {

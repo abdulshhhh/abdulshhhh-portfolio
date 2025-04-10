@@ -1,4 +1,4 @@
-<style>
+
         /* Global Styles */
         
         @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
@@ -116,6 +116,31 @@
             transition: all 0.3s ease;
         }
 
+        .achievements-container {
+            display: grid;
+            gap: 20px;
+            padding: 20px 0;
+          }
+          
+          .achievement-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 10px;
+            color: white;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 0 10px #4f46e5;
+          }
+          
+          .achievement-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 0 20px #4f46e5;
+          }
+          
+          .achievement-card ul {
+            padding-left: 20px;
+          }
+          
+/* 
         .achievement {
             margin-top: 20px;
             padding-top: 20px;
@@ -131,7 +156,7 @@
             font-size: 0.9rem;
             border: 1px solid rgba(255, 215, 0, 0.2);
             transition: all 0.3s ease;
-        }
+        } */
 
         @media (max-width: 768px) {
             #experience {
@@ -1905,7 +1930,7 @@
             transition: all 0.3s ease;
         }
 
-        .achievement {
+        /* .achievement {
             margin-top: 20px;
             padding-top: 20px;
             border-top: 1px solid rgba(0, 234, 255, 0.2);
@@ -1920,7 +1945,7 @@
             font-size: 0.9rem;
             border: 1px solid rgba(255, 215, 0, 0.2);
             transition: all 0.3s ease;
-        }
+        } */
 
         @media (max-width: 768px) {
             #experience {
@@ -3576,4 +3601,4 @@
         input, textarea, select {
             cursor: text;
         }
-    </style>
+  
