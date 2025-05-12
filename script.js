@@ -38,6 +38,28 @@ for (let i = 0; i < streakCount; i++) {
     
     streaksContainer.appendChild(streak);
 }
+document.addEventListener('DOMContentLoaded', function() {
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    
+    hamburger.addEventListener('click', function() {
+        navLinks.classList.toggle('active');
+        
+        // Animate hamburger to X
+        const bars = document.querySelectorAll('.bar');
+        bars[0].classList.toggle('rotate-45');
+        bars[1].classList.toggle('opacity-0');
+        bars[2].classList.toggle('rotate-neg-45');
+    });
+    
+    // Close menu when clicking a link
+    const links = document.querySelectorAll('.nav-link');
+    links.forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+        });
+    });
+});
 
 // Typewriter effect
 const phrases = [
@@ -1179,4 +1201,202 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+    document.addEventListener('DOMContentLoaded', function() {
+    // Project filtering
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+    
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Remove active class from all buttons
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            
+            // Add active class to clicked button
+            this.classList.add('active');
+            
+            const filterValue = this.getAttribute('data-filter');
+            
+            projectCards.forEach(card => {
+                // Show all projects if "All" is selected
+                if (filterValue === 'all') {
+                    card.style.display = 'block';
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                        card.style.transform = 'scale(1)';
+                    }, 100);
+                } else {
+                    // Check if card has the selected category
+                    if (card.getAttribute('data-category').includes(filterValue)) {
+                        card.style.display = 'block';
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'scale(1)';
+                        }, 100);
+                    } else {
+                        card.style.opacity = '0';
+                        card.style.transform = 'scale(0.8)';
+                        setTimeout(() => {
+                            card.style.display = 'none';
+                        }, 300);
+                    }
+                }
+            });
+        });
+    });
+});
+           // Optimized Animations Script
+// Place this in your script.js file
+
+// Utility to check if element is in viewport
+const isInViewport = (element, offset = 0) => {
+    const rect = element.getBoundingClientRect();
+    return (
+        rect.top <= (window.innerHeight || document.documentElement.clientHeight) - offset &&
+        rect.bottom >= 0 &&
+        rect.left <= (window.innerWidth || document.documentElement.clientWidth) - offset &&
+        rect.right >= 0
+    );
+};
+
+// Initialize on document ready
+document.addEventListener('DOMContentLoaded', function() {
+    // Particles.js optimization - only initialize where needed
+    if (document.getElementById('particles-js')) {
+        particlesJS('particles-js', {
+            particles: {
+                number: {
+                    // Reduced number for better performance
+                    value: 50,
+                    density: {
+                        enable: true,
+                        value_area: 800
+                    }
+                },
+                color: {
+                    value: '#0ff'
+                },
+                opacity: {
+                    value: 0.5,
+                    random: true
+                },
+                size: {
+                    value: 3,
+                    random: true
+                },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: '#0ff',
+                    opacity: 0.4,
+                    width: 1
+                },
+                move: {
+                    enable: true,
+                    // Slower movement for better performance
+                    speed: 2
+                }
+            },
+            interactivity: {
+                detect_on: 'canvas',
+                events: {
+                    onhover: {
+                        enable: true,
+                        mode: 'grab'
+                    },
+                    onclick: {
+                        enable: true,
+                        mode: 'push'
+                    }
+                }
+            },
+            retina_detect: false // Disable for better performance
+        });
+    }
+
+    // Initialize AOS with performance settings
+    if (typeof AOS !== 'undefined') {
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true, // Only animate once
+            mirror: false,
+            disable: window.innerWidth < 768 ? true : false // Disable on mobile
+        });
+    }
+
+    // Typewriter effect - more efficient implementation
+    const typewriterElement = document.getElementById('typewriter');
+    if (typewriterElement) {
+        const phrases = ['designing websites', 'coding', 'building apps', 'solving problems', 'learning new tech'];
+        let currentPhraseIndex = 0;
+        let currentCharIndex = 0;
+        let isDeleting = false;
+        let typingSpeed = 100;
+
+        function typeEffect() {
+            const currentPhrase = phrases[currentPhraseIndex];
+            
+            if (isDeleting) {
+                currentCharIndex--;
+                typingSpeed = 50; // Faster when deleting
+            } else {
+                currentCharIndex++;
+                typingSpeed = 100; // Normal speed when typing
+            }
+            
+            typewriterElement.textContent = currentPhrase.substring(0, currentCharIndex);
+            
+            if (!isDeleting && currentCharIndex === currentPhrase.length) {
+                isDeleting = true;
+                typingSpeed = 1000; // Pause at the end
+            } else if (isDeleting && currentCharIndex === 0) {
+                isDeleting = false;
+                currentPhraseIndex = (currentPhraseIndex + 1) % phrases.length;
+                typingSpeed = 500; // Pause before typing next phrase
+            }
+            
+            setTimeout(typeEffect, typingSpeed);
+        }
+        
+        // Start the typewriter effect
+        typeEffect();
+    }
+
+    // Custom cursor - with performance optimization
+    const cursor = document.querySelector('.cursor');
+    const cursorFollower = document.querySelector('.cursor-follower');
+    
+    if (cursor && cursorFollower) {
+        let mouseX = 0;
+        let mouseY = 0;
+        let cursorX = 0;
+        let cursorY = 0;
+        let followerX = 0;
+        let followerY = 0;
+        
+        document.addEventListener('mousemove', function(e) {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        });
+        
+        // Use requestAnimationFrame for smoother performance
+        function animateCursor() {
+            // Easing effect for smoother cursor movement
+            cursorX += (mouseX - cursorX) * 0.2;
+            cursorY += (mouseY - cursorY) * 0.2;
+            followerX += (mouseX - followerX) * 0.1; followerY += (mouseY - followerY) * 0.1; 
+            
+            // Update cursor and follower positions
+            cursor.style.transform = `translate3d(${cursorX - 10}px, ${cursorY - 10}px, 0)`;
+            cursorFollower.style.transform = `translate3d(${followerX - 20}px, ${followerY - 20}px, 0)`;
+            
+            // Call the next frame
+            requestAnimationFrame(animateCursor);
+        }
+        
+        // Start the animation loop
+        animateCursor();
+    }
+});
+
 });

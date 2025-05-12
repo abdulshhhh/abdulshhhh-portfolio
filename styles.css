@@ -758,6 +758,215 @@
         padding: 25px;
     }
 }
+-filter {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.filter-btn {
+    background-color: transparent;
+    border: 1px solid var(--primary-color);
+    color: #fff;
+    padding: 0.5rem 1.5rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 0.9rem;
+}
+
+.filter-btn:hover, .filter-btn.active {
+    background-color: var(--primary-color);
+    box-shadow: 0 0 15px var(--primary-color);
+    color: #000;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+/* Achievement Badge */
+.achievement-badge {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 255, 255, 0.3);  /* Light cyan background */
+    color: #00eaff;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-shadow: 0 0 5px #00eaff;
+    margin-top: 15px;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 1;  /* Ensure visibility */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.achievement-badge span {
+    display: inline-block;
+}
+
+.achievement-badge:hover {
+    background-color: rgba(0, 255, 255, 0.5);
+    transform: scale(1.05);
+}
+
+.project-card {
+    perspective: 1000px;
+    height: 400px;
+}
+
+.project-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.project-card:hover .project-card-inner {
+    transform: rotateY(180deg);
+}
+
+.project-card-front, .project-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.project-card-front {
+    background-color: rgba(20, 20, 35, 0.9);
+}
+
+.project-card-back {
+    background: linear-gradient(145deg, rgba(25, 25, 40, 0.95), rgba(15, 15, 30, 0.95));
+    color: white;
+    transform: rotateY(180deg);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.project-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.project-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    padding: 1.5rem;
+    transform: translateY(0);
+    transition: transform 0.5s;
+}
+
+.project-card-front:hover .project-overlay {
+    transform: translateY(-10px);
+}
+
+.project-card-front:hover .project-image {
+    transform: scale(1.0.project5);
+}
+
+.short-desc {
+    margin: 0.5rem 0 1rem;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.view-details {
+    display: inline-block;
+    font-size: 0.8rem;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
+
+.tech-stack span {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 0.25rem 0.75rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+}
+
+.project-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.btn-project {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: all 0.3s;
+    font-size: 0.9rem;
+}
+
+.btn-project:hover {
+    background-color: var(--primary-color);
+    color: #000;
+}
+
+/* Achievement Badge */
+.achievement-badge {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 255, 255, 0.3);  /* Light cyan background */
+    color: #00eaff;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-shadow: 0 0 5px #00eaff;
+    margin-top: 15px;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 1;  /* Ensure visibility */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.achievement-badge span {
+    display: inline-block;
+}
+
+.achievement-badge:hover {
+    background-color: rgba(0, 255, 255, 0.5);
+    transform: scale(1.05);
+}
+
 
  Section */
 #projects {
@@ -927,6 +1136,97 @@
         }
 
         /* Navigation Bar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-shadow: 0 0 10px var(--primary-color);
+}
+
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-link {
+    color: #fff;
+    text-decoration: none;
+    position: relative;
+    transition: all 0.3s;
+}
+
+.nav-link:after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    box-shadow: 0 0 8px var(--primary-color);
+    transition: width 0.3s;
+}
+
+.nav-link:hover {
+    color: var(--primary-color);
+}
+
+.nav-link:hover:after {
+    width: 100%;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    margin: 5px 0;
+    background: var(--primary-color);
+    box-shadow: 0 0 5px var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+    
+    .nav-links {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 70px);
+        flex-direction: column;
+        background-color: rgba(0, 0, 0, 0.95);
+        backdrop-filter: blur(10px);
+        align-items: center;
+        justify-content: center;
+        padding: 2rem 0;
+        transition: all 0.5s;
+    }
+    
+    .nav-links.active {
+        left: 0;
+    }
+}
         nav {
             position: fixed;
             top: 0;
@@ -2548,11 +2848,10 @@
     }
 }
 
- Section */
+/* Section */
 #projects {
     padding: 80px 0;
-    /* Remove the background gradient */
-    /* background: linear-gradient(135deg, #0d0d0d, #1a1a1a); */
+    /* Removed the background gradient for simplicity */
     text-align: center;
 }
 
@@ -2570,7 +2869,7 @@
 /* Project Grid */
 .project-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Auto-fit, adjusts grid for all screen sizes */
     gap: 20px;
     justify-content: center;
     padding: 20px;
@@ -2667,7 +2966,17 @@
     .project-card {
         padding: 15px;
     }
+    
+    /* Adjusting grid for smaller screens */
+    .project-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Responsive card fitting */
+    }
+
+    .project-image {
+        height: 180px; /* Slightly smaller image for mobile */
+    }
 }
+
 
         :root {
             --primary-color: rgb(249, 18, 145);

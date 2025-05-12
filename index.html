@@ -1,591 +1,614 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="styles.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abdul Kamil - Portfolio</title>
-    <link rel="icon" type="image/png" href="./images/portpic.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta name="description" content="Abdul Kamil's Portfolio - Full Stack Developer & Cloud Enthusiast">
+    <meta name="keywords" content="portfolio, web developer, cloud, full stack, Abdul Kamil">
+    <meta name="author" content="Abdul Kamil">
+    <title>Abdul Kamil - Full Stack Developer Portfolio</title>
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" as="style">
+    
+    <!-- Favicon with multiple sizes -->
+    <link rel="icon" type="image/png" href="./images/portpic.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="./images/portpic.png" sizes="192x192">
+    <link rel="apple-touch-icon" href="./images/portpic.png">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+          integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" 
+          crossorigin="anonymous" referrerpolicy="no-referrer">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/MotionPathPlugin.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/DrawSVGPlugin.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <!-- Particles.js Library -->
-<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-
-<!-- Optional: AOS Animation Library -->
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 <body>
-    <!-- Add Back to Top Button -->
-    <div class="back-to-top">
+    <!-- Skip to content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Back to Top Button -->
+    <button class="back-to-top" aria-label="Back to top">
         <i class="fas fa-arrow-up"></i>
-    </div>
+    </button>
 
     <!-- Background Elements -->
-    <div class="background-overlay"></div>
-    <div class="stars" id="stars"></div>
-    <div class="light-streaks" id="lightStreaks"></div>
-
+    <div class="background-overlay" aria-hidden="true"></div>
+    <div class="stars" id="stars" aria-hidden="true"></div>
+    <div class="light-streaks" id="lightStreaks" aria-hidden="true"></div>
     
-        <!-- Navigation Bar -->
-        <nav>
-            <div class="nav-links">
-                <a href="#home" class="nav-link">Home</a>
-                <a href="#about" class="nav-link">About</a>
-                <a href="#education" class="nav-link">Education</a>
-                <a href="#skills" class="nav-link">Skills</a>
-                <a href="#experience" class="nav-link">experience</a>
-                <a href="#achievements" class="nav-link">Achievements</a>
-                <a href="#projects" class="nav-link">Projects</a>
-            </div>
-        </nav>
-    
-
-    <!-- Home Section -->
-    <section id="home">
-        <div class="container">
-            <div class="home-container">
-                <!-- Text Content -->
-                <div class="text-content">
-                    <div class="greeting">HEY! I AM</div>
-                    <div class="name">Abdul Kamil</div>
-                    <div class="description">
-                        <span class="static-text">I like</span>
-                        <span id="typewriter"></span><span class="cursor"></span>
-                    </div>
-                    
-                    <!-- Social Icons -->
-                    <div class="social-icons">
-                        <a href="https://www.instagram.com/direct/t/17847598307578869/?hl=en" class="social-icon instagram">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/feed/?trk=guest_homepage-basic_nav-header-signin" class="social-icon linkedin">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                        <a href="https://github.com/abdulshhhh" class="social-icon github">
-                            <i class="fab fa-github"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Profile Picture -->
-                <div class="profile-section">
-                    <div class="profile-img-container">
-                        <img src="./images/mypic.jpg" alt="Abdul Kamil" class="profile-img" id="profileImg">
-                    </div>
-                </div>
-            </div>
+    <!-- Navigation Bar -->
+    <nav class="navbar" aria-label="Main navigation">
+        <div class="logo" aria-label="Abdul Kamil logo">AK</div>
+        <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </button>
+        <div class="nav-links">
+            <a href="#home" class="nav-link" aria-current="page">Home</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#education" class="nav-link">Education</a>
+            <a href="#skills" class="nav-link">Skills</a>
+            <a href="#experience" class="nav-link">Experience</a>
+            <a href="#achievements" class="nav-link">Achievements</a>
+            <a href="#projects" class="nav-link">Projects</a>
         </div>
-    </section>
+    </nav>
 
-    <!-- About Section -->
-    <section id="about">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            
-            <div class="about-profile-section">
-                <div class="about-image-container">
-                    <img src="./images/pro.jpg" alt="Abdul Kamil" class="about-profile-image">
-                </div>
-                <p>Here's a little about me</p>
-            </div>
-            
-            <div class="about-content">
-                <div class="info-item">
-                    <span>Name:</span>
-                    <span>Abdul Kamil</span>
-                </div>
-                <div class="info-item">
-                    <span>Email:</span>
-                    <span>abdulkamil2580@gmail.com</span>
-                </div>
-                <div class="info-item">
-                    <span>Phone:</span>
-                    <span>+91 8190814606</span>
-                </div>
-                <div class="info-item">
-                    <span>Country:</span>
-                    <span>India</span>
-                </div>
-                <div class="info-item">
-                    <span>City:</span>
-                    <span>Chennai</span>
-                </div>
-
-                <button class="btn-neon">
-                    DOWNLOAD RESUME
-                </button>
-            </div>
-
-            <div class="contact-form">
-                <h2 class="section-title">Contact Me</h2>
-                <form>
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" class="neon-input" placeholder="Your Name">
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Home Section -->
+        <section id="home" class="section" aria-labelledby="home-heading">
+            <div class="container">
+                <div class="home-container">
+                    <!-- Text Content -->
+                    <div class="text-content">
+                        <div class="greeting">HEY! I AM</div>
+                        <h1 id="home-heading" class="name">Abdul Kamil</h1>
+                        <div class="description">
+                            <span class="static-text">I like</span>
+                            <span id="typewriter" aria-live="polite"></span><span class="cursor" aria-hidden="true"></span>
+                        </div>
+                        
+                        <!-- Social Icons -->
+                        <div class="social-icons" aria-label="Social media links">
+                            <a href="https://www.instagram.com/direct/t/17847598307578869/?hl=en" class="social-icon instagram" aria-label="Instagram">
+                                <i class="fab fa-instagram" aria-hidden="true"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/feed/?trk=guest_homepage-basic_nav-header-signin" class="social-icon linkedin" aria-label="LinkedIn">
+                                <i class="fab fa-linkedin" aria-hidden="true"></i>
+                            </a>
+                            <a href="https://github.com/abdulshhhh" class="social-icon github" aria-label="GitHub">
+                                <i class="fab fa-github" aria-hidden="true"></i>
+                            </a>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" class="neon-input" placeholder="Your Email">
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" class="neon-input" rows="5" placeholder="Your Message"></textarea>
-                    </div>
-                    <button class="btn-neon" type="submit">
-                        SEND MESSAGE
-                    </button>
-                </form>
-            </div>
-        </div>
-    </section>
 
-    <!-- Education Section -->
-    <section id="education">
-        <div id="particles-js"></div>
-        <div class="container">
-            <h2 class="section-title">Education</h2>
-            <div class="education-item">
-                <h3>St. Joseph's College of Engineering</h3>
-                <p>B.Tech in Information Technology | CGPA: 8.1</p>
-                <p>OMR Road, Sholinganallur, Chennai</p>
-                <span class="year">2nd Year</span>
+                    <!-- Profile Picture -->
+                    <div class="profile-section">
+                        <div class="profile-img-container">
+                            <img src="./images/mypic.jpg" alt="Abdul Kamil" class="profile-img" id="profileImg" width="400" height="400">
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="education-item">
-                <h3>Santhome Higher Secondary School</h3>
-                <p>Completed Schooling | Score: 80% in HSLC</p>
-                <span class="year">Year of Passing: 2023</span>
-            </div>
-        </div>
-    </section>
-    
+        </section>
 
-    <div class="cursor"></div>
-    <div class="cursor-follower"></div>
-    
-    <!-- Neon Grid Background -->
-    <div class="neon-grid"></div>
-    
-    <!-- Glow Points -->
-    <div id="glow-container"></div>
-    
-    <section id="skills">
-        <canvas id="skills-canvas"></canvas>
+        <!-- About Section -->
+        <section id="about" class="section" aria-labelledby="about-heading">
+            <div class="container">
+                <h2 id="about-heading" class="section-title">About Me</h2>
+                
+                <div class="about-profile-section">
+                    <div class="about-image-container">
+                        <img src="./images/pro.jpg" alt="Abdul Kamil" class="about-profile-image" width="300" height="300">
+                    </div>
+                    <p>Here's a little about me</p>
+                </div>
+                
+                <div class="about-content">
+                    <div class="info-item">
+                        <span>Name:</span>
+                        <span>Abdul Kamil</span>
+                    </div>
+                    <div class="info-item">
+                        <span>Email:</span>
+                        <span><a href="mailto:abdulkamil2580@gmail.com">abdulkamil2580@gmail.com</a></span>
+                    </div>
+                    <div class="info-item">
+                        <span>Phone:</span>
+                        <span><a href="tel:+918190814606">+91 8190814606</a></span>
+                    </div>
+                    <div class="info-item">
+                        <span>Country:</span>
+                        <span>India</span>
+                    </div>
+                    <div class="info-item">
+                        <span>City:</span>
+                        <span>Chennai</span>
+                    </div>
+
+                    <a href="#" class="btn-neon" download="Abdul_Kamil_Resume.pdf">
+                        DOWNLOAD RESUME
+                    </a>
+                </div>
+
+                <div class="contact-form">
+                    <h2 class="section-title">Contact Me</h2>
+                    <form id="contactForm" aria-label="Contact form">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" class="neon-input" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" class="neon-input" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" class="neon-input" rows="5" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button class="btn-neon" type="submit">
+                            SEND MESSAGE
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="section" aria-labelledby="education-heading">
+            <div id="particles-js" aria-hidden="true"></div>
+            <div class="container">
+                <h2 id="education-heading" class="section-title">Education</h2>
+                <div class="education-item">
+                    <h3>St. Joseph's College of Engineering</h3>
+                    <p>B.Tech in Information Technology | CGPA: 8.1</p>
+                    <p>OMR Road, Sholinganallur, Chennai</p>
+                    <span class="year">2nd Year</span>
+                </div>
+                <div class="education-item">
+                    <h3>Santhome Higher Secondary School</h3>
+                    <p>Completed Schooling | Score: 80% in HSLC</p>
+                    <span class="year">Year of Passing: 2023</span>
+                </div>
+            </div>
+        </section>
         
-        <div class="skills-header">
-            <h1 class="section-title">Skills</h1>
-        </div>
-        
-        <div class="skills-container">
-            <div class="skill-categories">
-                <!-- Frontend Development Category -->
-                <div class="category frontend">
-                    <div class="category-title">
-                        <div class="category-icon">
-                            <i class="fas fa-desktop"></i>
-                        </div>
-                        <h3>Frontend Development</h3>
-                    </div>
-                    
-                    <!-- Doodle for Frontend -->
-                    <svg class="doodle" width="80" height="80" viewBox="0 0 80 80" style="top: -30px; right: 20px;">
-                        <path d="M20,40 Q40,20 60,40 Q40,60 20,40" stroke="var(--primary-color)" stroke-width="2" fill="none" stroke-dasharray="5,5" />
-                        <circle cx="40" cy="40" r="5" fill="var(--secondary-color)" />
-                    </svg>
-                    
-                    <div class="category-skills">
-                        <div class="skill-card" data-hover="HTML5">
-                            <i class="fab fa-html5 skill-icon" style="color: #E34F26;"></i>
-                            <div class="skill-name">HTML5</div>
-                            <div class="skill-level">
-                                <div class="level-bar" style="width: 95%;"></div>
-                            </div>
-                        </div>
-                        
-                        <div class="skill-card" data-hover="CSS3">
-                            <i class="fab fa-css3-alt skill-icon" style="color: #1572B6;"></i>
-                            <div class="skill-name">CSS3</div>
-                            <div class="skill-level">
-                                <div class="level-bar" style="width: 90%;"></div>
-                            </div>
-                        </div>
-                        
-                        <div class="skill-card" data-hover="JavaScript">
-                            <i class="fab fa-js skill-icon" style="color: #F7DF1E;"></i>
-                            <div class="skill-name">JavaScript</div>
-                            <div class="skill-level">
-                                <div class="level-bar" style="width: 90%;"></div>
-                            </div>
-                        </div>
-                        
-                        <div class="skill-card" data-hover="Figma">
-                            <i class="fab fa-figma skill-icon" style="color: #F24E1E;"></i>
-                            <div class="skill-name">Figma</div>
-                            <div class="skill-level">
-                                <div class="level-bar" style="width: 70%;"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <!-- Skills Section -->
+        <section id="skills" class="section" aria-labelledby="skills-heading">
+            <canvas id="skills-canvas" aria-hidden="true"></canvas>
+            
+            <div class="container">
+                <h2 id="skills-heading" class="section-title">Skills</h2>
                 
-                <!-- Backend Development Category -->
-                <div class="category backend">
-                    <div class="category-title">
-                        <div class="category-icon">
-                            <i class="fas fa-server"></i>
-                        </div>
-                        <h3>Backend Development</h3>
-                    </div>
-                    
-                    <!-- Doodle for Backend -->
-                    <svg class="doodle" width="100" height="60" viewBox="0 0 100 60" style="top: -20px; right: 10px;">
-                        <path d="M10,30 L30,10 L70,50 L90,30" stroke="var(--secondary-color)" stroke-width="3" fill="none" />
-                        <circle cx="10" cy="30" r="4" fill="var(--primary-color)" />
-                        <circle cx="90" cy="30" r="4" fill="var(--primary-color)" />
-                    </svg>
-                    
-                    <div class="category-skills">
-                        <div class="skill-card" data-hover="Express.js">
-                            <i class="fab fa-node skill-icon" style="color: #68A063;"></i>
-                            <div class="skill-name">Express.js</div>
-                            <div class="skill-level">
-                                <div class="level-bar" style="width: 85%;"></div>
+                <div class="skills-container">
+                    <div class="skill-categories">
+                        <!-- Frontend Development Category -->
+                        <div class="category frontend" data-aos="fade-up">
+                            <div class="category-title">
+                                <div class="category-icon" aria-hidden="true">
+                                    <i class="fas fa-desktop"></i>
+                                </div>
+                                <h3>Frontend Development</h3>
+                            </div>
+                            
+                            <div class="category-skills">
+                                <div class="skill-card" data-hover="HTML5">
+                                    <i class="fab fa-html5 skill-icon" style="color: #E34F26;" aria-hidden="true"></i>
+                                    <div class="skill-name">HTML5</div>
+                                    <div class="skill-level">
+                                        <div class="level-bar" data-level="95%"></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="skill-card" data-hover="CSS3">
+                                    <i class="fab fa-css3-alt skill-icon" style="color: #1572B6;" aria-hidden="true"></i>
+                                    <div class="skill-name">CSS3</div>
+                                    <div class="skill-level">
+                                        <div class="level-bar" data-level="90%"></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="skill-card" data-hover="JavaScript">
+                                    <i class="fab fa-js skill-icon" style="color: #F7DF1E;" aria-hidden="true"></i>
+                                    <div class="skill-name">JavaScript</div>
+                                    <div class="skill-level">
+                                        <div class="level-bar" data-level="90%"></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="skill-card" data-hover="Figma">
+                                    <i class="fab fa-figma skill-icon" style="color: #F24E1E;" aria-hidden="true"></i>
+                                    <div class="skill-name">Figma</div>
+                                    <div class="skill-level">
+                                        <div class="level-bar" data-level="70%"></div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         
-                        <div class="skill-card" data-hover="Node.js">
-                            <i class="fab fa-node skill-icon" style="color: #339933;"></i>
-                            <div class="skill-name">Node.js</div>
-                            <div class="skill-level">
-                                <div class="level-bar" style="width: 85%;"></div>
+                        <!-- Backend Development Category -->
+                        <div class="category backend" data-aos="fade-up" data-aos-delay="100">
+                            <div class="category-title">
+                                <div class="category-icon" aria-hidden="true">
+                                    <i class="fas fa-server"></i>
+                                </div>
+                                <h3>Backend Development</h3>
                             </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Database Category -->
-                <div class="category database">
-                    <div class="category-title">
-                        <div class="category-icon">
-                            <i class="fas fa-database"></i>
-                        </div>
-                        <h3>Databases & Storage</h3>
-                    </div>
-                    
-                    <!-- Doodle for Database -->
-                    <svg class="doodle" width="70" height="70" viewBox="0 0 70 70" style="top: -25px; right: 15px;">
-                        <circle cx="35" cy="35" r="30" stroke="var(--primary-color)" stroke-width="2" fill="none" />
-                        <circle cx="35" cy="35" r="20" stroke="var(--secondary-color)" stroke-width="2" fill="none" stroke-dasharray="4,4" />
-                        <circle cx="35" cy="35" r="10" stroke="var(--primary-color)" stroke-width="2" fill="none" />
-                    </svg>
-                    
-                    <div class="category-skills">
-                        <div class="skill-card" data-hover="MongoDB">
-                            <i class="fas fa-database skill-icon" style="color: #47A248;"></i>
-                            <div class="skill-name">MongoDB</div>
-                            <div class="skill-level">
-                                <div class="level-bar" style="width: 80%;"></div>
+                            
+                            <div class="category-skills">
+                                <div class="skill-card" data-hover="Express.js">
+                                    <i class="fab fa-node skill-icon" style="color: #68A063;" aria-hidden="true"></i>
+                                    <div class="skill-name">Express.js</div>
+                                    <div class="skill-level">
+                                        <div class="level-bar" data-level="85%"></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="skill-card" data-hover="Node.js">
+                                    <i class="fab fa-node skill-icon" style="color: #339933;" aria-hidden="true"></i>
+                                    <div class="skill-name">Node.js</div>
+                                    <div class="skill-level">
+                                        <div class="level-bar" data-level="85%"></div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         
-                        <div class="skill-card" data-hover="Firebase">
-                            <i class="fas fa-fire skill-icon" style="color: #FFCA28;"></i>
-                            <div class="skill-name">Firebase</div>
-                            <div class="skill-level">
-                                <div class="level-bar" style="width: 75%;"></div>
+                        <!-- Database Category -->
+                        <div class="category database" data-aos="fade-up" data-aos-delay="200">
+                            <div class="category-title">
+                                <div class="category-icon" aria-hidden="true">
+                                    <i class="fas fa-database"></i>
+                                </div>
+                                <h3>Databases & Storage</h3>
                             </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Programming Languages -->
-                <div class="category languages">
-                    <div class="category-title">
-                        <div class="category-icon">
-                            <i class="fas fa-code"></i>
-                        </div>
-                        <h3>Programming Languages</h3>
-                    </div>
-                    
-                    <!-- Doodle for Languages -->
-                    <svg class="doodle" width="90" height="50" viewBox="0 0 90 50" style="top: -20px; right: 10px;">
-                        <path d="M10,25 C30,5 60,45 80,25" stroke="var(--secondary-color)" stroke-width="2" fill="none" />
-                        <path d="M10,25 C30,45 60,5 80,25" stroke="var(--primary-color)" stroke-width="2" fill="none" />
-                    </svg>
-                    
-                    <div class="category-skills">
-                        <div class="skill-card" data-hover="Java">
-                            <i class="fab fa-java skill-icon" style="color: #007396;"></i>
-                            <div class="skill-name">Java</div>
-                            <div class="skill-level">
-                                <div class="level-bar" style="width: 85%;"></div>
+                            
+                            <div class="category-skills">
+                                <div class="skill-card" data-hover="MongoDB">
+                                    <i class="fas fa-database skill-icon" style="color: #47A248;" aria-hidden="true"></i>
+                                    <div class="skill-name">MongoDB</div>
+                                    <div class="skill-level">
+                                        <div class="level-bar" data-level="80%"></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="skill-card" data-hover="Firebase">
+                                    <i class="fas fa-fire skill-icon" style="color: #FFCA28;" aria-hidden="true"></i>
+                                    <div class="skill-name">Firebase</div>
+                                    <div class="skill-level">
+                                        <div class="level-bar" data-level="75%"></div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         
-                        <div class="skill-card" data-hover="Python">
-                            <i class="fab fa-python skill-icon" style="color: #3776AB;"></i>
-                            <div class="skill-name">Python</div>
-                            <div class="skill-level">
-                                <div class="level-bar" style="width: 80%;"></div>
+                        <!-- Programming Languages -->
+                        <div class="category languages" data-aos="fade-up" data-aos-delay="300">
+                            <div class="category-title">
+                                <div class="category-icon" aria-hidden="true">
+                                    <i class="fas fa-code"></i>
+                                </div>
+                                <h3>Programming Languages</h3>
                             </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Cloud & DevOps -->
-                <div class="category cloud">
-                    <div class="category-title">
-                        <div class="category-icon">
-                            <i class="fas fa-cloud"></i>
-                        </div>
-                        <h3>Cloud & DevOps</h3>
-                    </div>
-                    
-                    <!-- Doodle for Cloud -->
-                    <svg class="doodle" width="80" height="60" viewBox="0 0 80 60" style="top: -25px; right: 15px;">
-                        <path d="M20,40 Q35,10 50,40 Q65,10 80,40" stroke="var(--secondary-color)" stroke-width="2" fill="none" />
-                        <circle cx="20" cy="40" r="3" fill="var(--primary-color)" />
-                        <circle cx="50" cy="40" r="3" fill="var(--primary-color)" />
-                        <circle cx="80" cy="40" r="3" fill="var(--primary-color)" />
-                    </svg>
-                    
-                    <div class="category-skills">
-                        <div class="skill-card" data-hover="AWS">
-                            <i class="fab fa-aws skill-icon" style="color: #FF9900;"></i>
-                            <div class="skill-name">AWS</div>
-                            <div class="skill-level">
-                                <div class="level-bar" style="width: 70%;"></div>
+                            
+                            <div class="category-skills">
+                                <div class="skill-card" data-hover="Java">
+                                    <i class="fab fa-java skill-icon" style="color: #007396;" aria-hidden="true"></i>
+                                    <div class="skill-name">Java</div>
+                                    <div class="skill-level">
+                                        <div class="level-bar" data-level="85%"></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="skill-card" data-hover="Python">
+                                    <i class="fab fa-python skill-icon" style="color: #3776AB;" aria-hidden="true"></i>
+                                    <div class="skill-name">Python</div>
+                                    <div class="skill-level">
+                                        <div class="level-bar" data-level="80%"></div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         
-                        <div class="skill-card" data-hover="GitHub">
-                            <i class="fab fa-github skill-icon" style="color: #181717;"></i>
-                            <div class="skill-name">GitHub</div>
-                            <div class="skill-level">
-                                <div class="level-bar" style="width: 90%;"></div>
+                        <!-- Cloud & DevOps -->
+                        <div class="category cloud" data-aos="fade-up" data-aos-delay="400">
+                            <div class="category-title">
+                                <div class="category-icon" aria-hidden="true">
+                                    <i class="fas fa-cloud"></i>
+                                </div>
+                                <h3>Cloud & DevOps</h3>
+                            </div>
+                            
+                            <div class="category-skills">
+                                <div class="skill-card" data-hover="AWS">
+                                    <i class="fab fa-aws skill-icon" style="color: #FF9900;" aria-hidden="true"></i>
+                                    <div class="skill-name">AWS</div>
+                                    <div class="skill-level">
+                                        <div class="level-bar" data-level="70%"></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="skill-card" data-hover="GitHub">
+                                    <i class="fab fa-github skill-icon" style="color: #181717;" aria-hidden="true"></i>
+                                    <div class="skill-name">GitHub</div>
+                                    <div class="skill-level">
+                                        <div class="level-bar" data-level="90%"></div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            
-            <!-- Connecting Arrows between Categories -->
-            <svg class="arrow" viewBox="0 0 100 80" style="top: 40%; left: 25%; transform: rotate(30deg);">
-                <path d="M10,40 L80,40 M70,30 L80,40 L70,50" stroke="var(--primary-color)" stroke-width="2" fill="none" />
-            </svg>
-            
-            <svg class="arrow" viewBox="0 0 100 80" style="top: 55%; left: 60%; transform: rotate(-30deg);">
-                <path d="M10,40 L80,40 M70,30 L80,40 L70,50" stroke="var(--secondary-color)" stroke-width="2" fill="none" />
-            </svg>
-            
-            <!-- Dot Patterns -->
-            <div class="dot-pattern" style="top: 10%; left: 5%;"></div>
-            <div class="dot-pattern" style="bottom: 10%; right: 5%;"></div>
-            
-            <!-- Squiggles -->
-            <svg class="squiggle" width="150" height="50" viewBox="0 0 150 50" style="bottom: 20%; left: 20%;">
-                <path d="M10,25 Q25,5 40,25 Q55,45 70,25 Q85,5 100,25 Q115,45 130,25" stroke="var(--primary-color)" stroke-width="2" fill="none" />
-            </svg>
-            
-            <svg class="squiggle" width="150" height="50" viewBox="0 0 150 50" style="top: 20%; right: 20%;">
-                <path d="M10,25 Q25,5 40,25 Q55,45 70,25 Q85,5 100,25 Q115,45 130,25" stroke="var(--secondary-color)" stroke-width="2" fill="none" />
-            </svg>
-        </div>
-    </section>
+        </section>
 
-    <section id="experience" class="neon-bg">
-        <div class="container">
-          <h2 class="section-title">Experience<span class="neon-dot">.</span></h2>
-          
-          <div class="particles-container">
-            <div id="particles-js"></div>
-            
-            <div class="experience-cards">
-              <div class="experience-card" data-aos="fade-up">
-                <div class="card-icon">🎨</div>
-                <h3>UI/UX Design Intern</h3>
-                <h4>Retech Logistics</h4>
-                <p>Mastered Figma and enhanced UI/UX design skills, focusing on user-centered design principles.</p>
-                <div class="tech-stack">
-                  <span>Figma</span>
-                  <span>Prototyping</span>
-                  <span>Wireframing</span>
-                  <span>UX Research</span>
-                </div>
-              </div>
-              
-              <div class="experience-card" data-aos="fade-up" data-aos-delay="100">
-                <div class="card-icon">💻</div>
-                <h3>Admin Block Portal Developer</h3>
-                <p>Developed the frontend for the Admin Block Portal at my college, ensuring a responsive, modern, and interactive UI.</p>
-                <div class="tech-stack">
-                  <span>HTML</span>
-                  <span>CSS</span>
-                  <span>JavaScript</span>
-                  <span>Bootstrap</span>
-                </div>
-              </div>
-              
-              <div class="experience-card" data-aos="fade-up" data-aos-delay="200">
-                <div class="card-icon">🌩</div>
-                <h3>Google Cloud Arcade Facilitator</h3>
-                <p>Led cloud computing workshops and helped students gain hands-on experience in Google Cloud.</p>
-                <div class="tech-stack">
-                  <span>Google Cloud</span>
-                  <span>Kubernetes</span>
-                  <span>Compute Engine</span>
-                  <span>Cloud Functions</span>
-                </div>
-              </div>
-              
-              <div class="experience-card" data-aos="fade-up" data-aos-delay="300">
-                <div class="card-icon">🎤</div>
-                <h3>GDG On-Campus Event Host</h3>
-                <p>Organized and hosted Google Developer Group (GDG) events at my college, connecting students with industry experts.</p>
-              </div>
-              
-              <div class="experience-card" data-aos="fade-up" data-aos-delay="400">
-                <div class="card-icon">📡</div>
-                <h3>Smart Attendance System Developer</h3>
-                <p>Developed a Smart Attendance System using geofencing & face recognition, winning 2nd place at Innothon '24.</p>
-                <div class="tech-stack">
-                  <span>Geofencing</span>
-                  <span>AWS</span>
-                  <span>Firebase</span>
-                  <span>Face Recognition</span>
-                </div>
-
-                <!-- <div class="achievement">
-                  <span>🏆 2nd Place - Innothon '24</span>
-                </div> -->
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Achievements section -->
-
-      <section id="achievements">
-        <div class="container">
-          <h2 class="section-title">Achievements<span class="neon-dot">.</span></h2>
-      
-          <div class="achievements-container">
-            <!-- Achievement 1 -->
-            <div class="achievement-card">
-              <h3>🚀 Hack A Cloud – 🏆 Champion</h3>
-              <p>
-                Designed and deployed a scalable multi-cloud solution (AWS, Azure, GCP) with CI/CD and monitoring.
-              </p>
-              <ul>
-                <li>🔹 AWS, Azure, GCP</li>
-                <li>🔹 Node.js, Express.js</li>
-                <li>🔹 React.js, MongoDB</li>
-              </ul>
-            </div>
-      
-            <!-- Achievement 2 -->
-            <div class="achievement-card">
-              <h3>🎯 Innothon '24 – 🥈 2nd Place</h3>
-              <p>
-                Smart Attendance System with face recognition & geofencing using Firebase and AWS services.
-              </p>
-              <ul>
-                <li>🔹 Firebase, OpenCV, Rekognition</li>
-                <li>🔹 Node.js, Bootstrap</li>
-              </ul>
-            </div>
-      
-            <!-- Achievement 3 -->
-            <div class="achievement-card">
-              <h3>👋 Orientation Host</h3>
-              <p>
-                Hosted technical orientation sessions for 200+ students and connected them with coding clubs.
-              </p>
-              <ul>
-                <li>🔹 Public Speaking</li>
-                <li>🔹 Event Management</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-      
-
-
-    <!-- Projects Section -->
-    <section id="projects">
-        <div class="container">
-            <h2 class="section-title">Projects</h2>
-            <div class="project-grid">
+        <!-- Experience Section -->
+        <section id="experience" class="section neon-bg" aria-labelledby="experience-heading">
+            <div class="container">
+                <h2 id="experience-heading" class="section-title">Experience<span class="neon-dot">.</span></h2>
                 
-                <!-- Smart Attendance System -->
-                <div class="project-card">
-                    <img src="./images/sjce.png" alt="Smart Attendance System" class="project-image">
-                    <div class="project-info">
-                        <h3>Smart Attendance System</h3>
-                        <p>A geofencing-based attendance system integrating <b>Face Recognition, Firebase, AWS Cloud</b>, and real-time monitoring.</p>
-                        <div class="tech-stack">
-                            <span>🔹 HTML</span>
-                            <span>🔹 CSS</span>
-                            <span>🔹 JavaScript</span>
-                            <span>🔹 Node.js</span>
-                            <span>🔹 AWS</span>
-                            <span>🔹 Firebase</span>
-                            <span>🔹 Firebase</span>
-                            <span>🔹 Docker</span>
-                            <span>🔹 CI/CD</span>
+                <div class="particles-container" aria-hidden="true">
+                    <div id="experience-particles"></div>
+                    
+                    <div class="experience-cards">
+                        <div class="experience-card" data-aos="fade-up">
+                            <div class="card-icon" aria-hidden="true">🎨</div>
+                            <h3>UI/UX Design Intern</h3>
+                            <h4>Retech Logistics</h4>
+                            <p>Mastered Figma and enhanced UI/UX design skills, focusing on user-centered design principles.</p>
+                            <div class="tech-stack">
+                                <span>Figma</span>
+                                <span>Prototyping</span>
+                                <span>Wireframing</span>
+                                <span>UX Research</span>
+                            </div>
                         </div>
-                        <a href="https://github.com/yourrepo/attendance-system" class="btn">View Project</a>
+                        
+                        <div class="experience-card" data-aos="fade-up" data-aos-delay="100">
+                            <div class="card-icon" aria-hidden="true">💻</div>
+                            <h3>Admin Block Portal Developer</h3>
+                            <p>Developed the frontend for the Admin Block Portal at my college, ensuring a responsive, modern, and interactive UI.</p>
+                            <div class="tech-stack">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                                <span>Bootstrap</span>
+                            </div>
+                        </div>
+                        
+                        
+                        
+                        <div class="experience-card" data-aos="fade-up" data-aos-delay="300">
+                            <div class="card-icon" aria-hidden="true">🎤</div>
+                            <h3>GDG On-Campus Event Host</h3>
+                            <p>Organized and hosted Google Developer Group (GDG) events at my college, connecting students with industry experts.</p>
+                        </div>
+                        
+                       
+                        </div>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <!-- Achievements Section -->
+        <section id="achievements" class="section" aria-labelledby="achievements-heading">
+            <div class="container">
+                <h2 id="achievements-heading" class="section-title">Achievements<span class="neon-dot">.</span></h2>
+            
+                <div class="achievements-container">
+                    <!-- Achievement 1 -->
+                    <div class="achievement-card" data-aos="flip-left">
+                        <h3>🚀 Hack A Cloud – 🏆 Champion</h3>
+                        <p>
+                            Designed and deployed a scalable multi-cloud solution (AWS, Azure, GCP) with CI/CD and monitoring.
+                        </p>
+                        <ul>
+                            <li>🔹 AWS, Azure, GCP</li>
+                            <li>🔹 Node.js, Express.js</li>
+                            <li>🔹 React.js, MongoDB</li>
+                        </ul>
+                    </div>
+            
+                    <!-- Achievement 2 -->
+                    <div class="achievement-card" data-aos="flip-left" data-aos-delay="100">
+                        <h3>🎯 Innothon '24 – 🥈 2nd Place</h3>
+                        <p>
+                            Smart Attendance System with face recognition & geofencing using Firebase and AWS services.
+                        </p>
+                        <ul>
+                            <li>🔹 Firebase, OpenCV, Rekognition</li>
+                            <li>🔹 Node.js, Bootstrap</li>
+                        </ul>
+                    </div>
+            
+                    <!-- Achievement 3 -->
+                    <div class="achievement-card" data-aos="flip-left" data-aos-delay="200">
+                        <h3>👋 Orientation Host</h3>
+                        <p>
+                            Hosted technical orientation sessions for 200+ students and connected them with coding clubs.
+                        </p>
+                        <ul>
+                            <li>🔹 Public Speaking</li>
+                            <li>🔹 Event Management</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section" aria-labelledby="projects-heading">
+            <div class="container">
+                <h2 id="projects-heading" class="section-title">Projects<span class="neon-dot">.</span></h2>
+                
+                <div class="project-filter" role="tablist" aria-label="Project filter">
+                    <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All</button>
+                    <button class="filter-btn" data-filter="web" role="tab" aria-selected="false">Web</button>
+                    <button class="filter-btn" data-filter="mobile" role="tab" aria-selected="false">Mobile</button>
+                    <button class="filter-btn" data-filter="cloud" role="tab" aria-selected="false">Cloud</button>
+                </div>
+                
+                <div class="project-grid">
+                    <!-- Smart Attendance System -->
+                    <div class="project-card" data-category="web cloud" data-aos="zoom-in">
+                        <div class="project-card-inner">
+                            <div class="project-card-front">
+                                <img src="./images/sjce.png" alt="Smart Attendance System" class="project-image" width="400" height="300">
+                                <div class="project-overlay">
+                                    <h3>Smart Attendance System</h3>
+                                    <p class="short-desc">Geofencing-based attendance with face recognition</p>
+                                    <span class="view-details">Click to View Details</span>
+                                </div>
+                            </div>
+                            
+                            <div class="project-card-back">
+                                <h3>Smart Attendance System</h3>
+                                <p>A geofencing-based attendance system integrating <b>Face Recognition, Firebase, AWS Cloud</b>, and real-time monitoring.</p>
+                                
+                                <div class="tech-stack">
+                                    <span>HTML</span>
+                                    <span>CSS</span>
+                                    <span>JavaScript</span>
+                                    <span>Node.js</span>
+                                    <span>AWS</span>
+                                    <span>Firebase</span>
+                                    <span>Docker</span>
+                                    <span>CI/CD</span>
+                                </div>
+                                
+                                <div class="project-links">
+                                    <a href="https://github.com/yourrepo/attendance-system" class="btn-project">
+                                        <i class="fab fa-github" aria-hidden="true"></i> GitHub
+                                    </a>
+                                </div>
+                                
+                                <div class="achievement-badge">
+                                    <span>🥈 2nd Place - Innothon '24</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <!-- Fitness App -->
+                    <div class="project-card" data-category="mobile web" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="project-card-inner">
+                            <div class="project-card-front">
+                                <img src="./images/fitness.jpg" alt="AI-Powered Fitness Tracker" class="project-image" width="400" height="300">
+                                <div class="project-overlay">
+                                    <h3>AI-Powered Fitness Tracker</h3>
+                                    <p class="short-desc">Smart fitness app with AI features</p>
+                                    <span class="view-details">Click to View Details</span>
+                                </div>
+                            </div>
+                            
+                            <div class="project-card-back">
+                                <h3>AI-Powered Fitness Tracker</h3>
+                                <p>A smart fitness application with an AI-based <b>BMI calculator, real-time trainer recommendations</b>, and a <b>social media integration</b>.</p>
+                                
+                                <div class="tech-stack">
+                                    <span>React.js</span>
+                                    <span>Tailwind CSS</span>
+                                    <span>Node.js</span>
+                                    <span>MongoDB</span>
+                                    <span>TensorFlow.js</span>
+                                </div>
+                                
+                                <div class="project-links">
+                                    <a href="https://github.com/yourrepo/fitness-tracker" class="btn-project">
+                                        <i class="fab fa-github" aria-hidden="true"></i> GitHub
+                                    </a>
+                                </div>  
+                            </div>
+                        </div>
+                    </div>
+            
+                    <!-- Uzhavan Connect -->
+                    <div class="project-card" data-category="web" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="project-card-inner">
+                            <div class="project-card-front">
+                                <img src="./images/uzhavan.jpg" alt="Uzhavan Connect" class="project-image" width="400" height="300">
+                                <div class="project-overlay">
+                                    <h3>Uzhavan Connect</h3>
+                                    <p class="short-desc">Empowering farmers through digital connectivity</p>
+                                    <span class="view-details">Click to View Details</span>
+                                </div>
+                            </div>
+                            
+                            <div class="project-card-back">
+                                <h3>Uzhavan Connect</h3>
+                                <p>A farmer-to-consumer platform with <b>NABARD loan eligibility checker</b>, <b>real-time market pricing</b>, and <b>direct product listings</b> to empower rural agriculture.</p>
+                                
+                                <div class="tech-stack">
+                                    <span>HTML</span>
+                                    <span>CSS</span>
+                                    <span>JavaScript</span>
+                                    <span>Node.js</span>
+                                    <span>MongoDB</span>
+                                    <span>Firebase</span>
+                                    <span>AWS</span>
+                                </div>
+                                
+                                <div class="project-links">
+                                    <a href="https://github.com/yourrepo/uzhavan-connect" class="btn-project">
+                                        <i class="fab fa-github" aria-hidden="true"></i> GitHub
+                                    </a>
+                                </div>
+                                
+                                <div class="achievement-badge">
+                                    <span>🏆 Gen Brainiacs 2024 Hackathon Winner</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
     
-                <!-- Project 2: Fitness App -->
-                <div class="project-card">
-                    <img src="./images/fitness.jpg" alt="Fitness Tracker App" class="project-image">
-                    <div class="project-info">
-                        <h3>AI-Powered Fitness Tracker</h3>
-                        <p>A smart fitness application with an AI-based **BMI calculator, real-time trainer recommendations**, and a **social media integration**.</p>
-                        <div class="tech-stack">
-                            <span>🔹 React.js</span>
-                            <span>🔹 Tailwind CSS</span>
-                            <span>🔹 Node.js</span>
-                            <span>🔹 MongoDB</span>
-                            <span>🔹 TensorFlow.js</span>
-                        </div>
-                        <a href="https://github.com/yourrepo/fitness-tracker" class="btn">View Project</a>
-                    </div>
-                </div>
-    
-                <!-- Project 3: Secure Messaging System -->
-                <div class="project-card">
-                    <img src="./images/libary.jpg" alt="Library Management System" class="project-image">
-                    <div class="project-info">
-                        <h3>Library Management System</h3>
-                        <p>A smart library management solution with **real-time book tracking, automated check-ins/outs**, and **analytics dashboard**.</p>
-                        <div class="tech-stack">
-                            <span>🔹 HTML</span>
-                            <span>🔹 CSS</span>
-                            <span>🔹 JavaScript</span>
-                            <span>🔹 Node.js</span>
-                            <span>🔹 MongoDB</span>
-                        </div>
-                        <a href="https://github.com/yourrepo/library-management" class="btn">View Project</a>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-    </section>
-    
+    <!-- Footer -->
     <footer>
-        &copy; <span id="year"></span> Abdul Kamil | Portfolio
+        <div class="container">
+            <p>&copy; <span id="year"></span> Abdul Kamil | Portfolio</p>
+            <div class="footer-links">
+                <a href="#privacy-policy">Privacy Policy</a>
+                <a href="#terms">Terms of Use</a>
+                <a href="mailto:abdulkamil2580@gmail.com">Contact</a>
+            </div>
+        </div>
     </footer>
-    <script src="script.js"></script>
+
+    <!-- Scripts -->
+    <!-- Load scripts with defer for better performance -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js" defer></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+    <script src="script.js" defer></script>
+    
+    <!-- Initialize AOS animation -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof AOS !== 'undefined') {
+                AOS.init({
+                    duration: 800,
+                    easing: 'ease-out-cubic',
+                    once: true,
+                    mirror: false
+                });
+            }
+        });
+    </script>
 </body>
 </html>
