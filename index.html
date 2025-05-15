@@ -103,67 +103,84 @@
             </div>
         </section>
 
-        <!-- About Section -->
-        <section id="about" class="section" aria-labelledby="about-heading">
-            <div class="container">
-                <h2 id="about-heading" class="section-title">About Me</h2>
-                
-                <div class="about-profile-section">
-                    <div class="about-image-container">
-                        <img src="./images/pro.jpg" alt="Abdul Kamil" class="about-profile-image" width="300" height="300">
-                    </div>
-                    <p>Here's a little about me</p>
-                </div>
-                
-                <div class="about-content">
-                    <div class="info-item">
-                        <span>Name:</span>
-                        <span>Abdul Kamil</span>
-                    </div>
-                    <div class="info-item">
-                        <span>Email:</span>
-                        <span><a href="mailto:abdulkamil2580@gmail.com">abdulkamil2580@gmail.com</a></span>
-                    </div>
-                    <div class="info-item">
-                        <span>Phone:</span>
-                        <span><a href="tel:+918190814606">+91 8190814606</a></span>
-                    </div>
-                    <div class="info-item">
-                        <span>Country:</span>
-                        <span>India</span>
-                    </div>
-                    <div class="info-item">
-                        <span>City:</span>
-                        <span>Chennai</span>
-                    </div>
+<!-- About Section -->
+<section id="about" class="section" aria-labelledby="about-heading">
+    <div class="container">
+        <h2 id="about-heading" class="section-title">About Me</h2>
 
-                    <a href="#" class="btn-neon" download="Abdul_Kamil_Resume.pdf">
-                        DOWNLOAD RESUME
-                    </a>
-                </div>
+        <div class="about-profile-section">
+            <div class="about-image-container">
+                <img src="./images/pro.jpg" alt="Abdul Kamil" class="about-profile-image" width="300" height="300">
+            </div>
+            <p class="about-intro">Here's a little about me</p>
+        </div>
 
-                <div class="contact-form">
-                    <h2 class="section-title">Contact Me</h2>
-                    <form id="contactForm" aria-label="Contact form">
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" id="name" class="neon-input" placeholder="Your Name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" class="neon-input" placeholder="Your Email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" class="neon-input" rows="5" placeholder="Your Message" required></textarea>
-                        </div>
-                        <button class="btn-neon" type="submit">
-                            SEND MESSAGE
-                        </button>
-                    </form>
+        <div class="about-content">
+            <div class="info-grid">
+                <div class="info-item">
+                    <span class="info-label">Name:</span>
+                    <span class="info-value">Abdul Kamil</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Email:</span>
+                    <span class="info-value"><a href="mailto:abdulkamil2580@gmail.com">abdulkamil2580@gmail.com</a></span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Phone:</span>
+                    <span class="info-value"><a href="tel:+918190814606">+91 8190814606</a></span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Country:</span>
+                    <span class="info-value">India</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">City:</span>
+                    <span class="info-value">Chennai</span>
                 </div>
             </div>
-        </section>
+
+            <div class="resume-container">
+                <a href="Abdul_Resume_ .pdf (1).pdf" class="btn-neon" download="Abdul_Resume.pdf">
+                    DOWNLOAD RESUME
+                </a>
+            </div>
+
+            <div class="contact-form-container">
+                <h2 class="section-title">Get In Touch</h2>
+                <form id="contactForm" aria-label="Contact form" class="modern-form">
+                    <div class="form-row">
+                        <div class="form-group half-width">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" id="name" class="form-input" placeholder="Your Name" required>
+                            <span class="input-highlight"></span>
+                        </div>
+                        <div class="form-group half-width">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" id="email" class="form-input" placeholder="Your Email" required>
+                            <span class="input-highlight"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject" class="form-label">Subject</label>
+                        <input type="text" id="subject" class="form-input" placeholder="Subject">
+                        <span class="input-highlight"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="message" class="form-label">Message</label>
+                        <textarea id="message" class="form-textarea" rows="5" placeholder="Your Message" required></textarea>
+                        <span class="input-highlight"></span>
+                    </div>
+                    <div class="form-submit">
+                        <button class="submit-btn" type="submit">
+                            <span class="btn-text">SEND MESSAGE</span>
+                            <span class="btn-icon">→</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
 
         <!-- Education Section -->
         <section id="education" class="section" aria-labelledby="education-heading">
@@ -201,6 +218,23 @@
                                 </div>
                                 <h3>Frontend Development</h3>
                             </div>
+
+                            <div class="skill-card" data-hover="React">
+    <i class="fab fa-react skill-icon" style="color: #61DBFB;" aria-hidden="true"></i>
+    <div class="skill-name">React</div>
+    <div class="skill-level">
+        <div class="level-bar" data-level="90%"></div>
+    </div>
+</div>
+
+<div class="skill-card" data-hover="Vite.js">
+    <div class="skill-icon" style="font-size: 2rem; color: #646CFF;">⚡</div>
+    <div class="skill-name">Vite.js</div>
+    <div class="skill-level">
+        <div class="level-bar" data-level="85%"></div>
+    </div>
+</div>
+
                             
                             <div class="category-skills">
                                 <div class="skill-card" data-hover="HTML5">
@@ -211,13 +245,14 @@
                                     </div>
                                 </div>
                                 
-                                <div class="skill-card" data-hover="CSS3">
-                                    <i class="fab fa-css3-alt skill-icon" style="color: #1572B6;" aria-hidden="true"></i>
-                                    <div class="skill-name">CSS3</div>
-                                    <div class="skill-level">
-                                        <div class="level-bar" data-level="90%"></div>
-                                    </div>
-                                </div>
+                               <div class="skill-card" data-hover="Tailwind CSS">
+    <i class="fab fa-css3-alt skill-icon" style="color: #38B2AC;" aria-hidden="true"></i>
+    <div class="skill-name">Tailwind CSS</div>
+    <div class="skill-level">
+        <div class="level-bar" data-level="80%"></div>
+    </div>
+</div>
+
                                 
                                 <div class="skill-card" data-hover="JavaScript">
                                     <i class="fab fa-js skill-icon" style="color: #F7DF1E;" aria-hidden="true"></i>
@@ -254,6 +289,15 @@
                                         <div class="level-bar" data-level="85%"></div>
                                     </div>
                                 </div>
+
+                                <div class="skill-card" data-hover="Python">
+    <i class="fab fa-python skill-icon" style="color: #3776AB;" aria-hidden="true"></i>
+    <div class="skill-name">Python</div>
+    <div class="skill-level">
+        <div class="level-bar" data-level="90%"></div>
+    </div>
+</div>
+
                                 
                                 <div class="skill-card" data-hover="Node.js">
                                     <i class="fab fa-node skill-icon" style="color: #339933;" aria-hidden="true"></i>
@@ -262,6 +306,15 @@
                                         <div class="level-bar" data-level="85%"></div>
                                     </div>
                                 </div>
+
+                                <div class="skill-card" data-hover="FastAPI">
+    <i class="fas fa-bolt skill-icon" style="color: #009688;" aria-hidden="true"></i>
+    <div class="skill-name">FastAPI</div>
+    <div class="skill-level">
+        <div class="level-bar" data-level="75%"></div>
+    </div>
+</div>
+
                             </div>
                         </div>
                         
@@ -271,17 +324,19 @@
                                 <div class="category-icon" aria-hidden="true">
                                     <i class="fas fa-database"></i>
                                 </div>
-                                <h3>Databases & Storage</h3>
+                                <h3>Databases & Authentication</h3>
                             </div>
                             
                             <div class="category-skills">
                                 <div class="skill-card" data-hover="MongoDB">
                                     <i class="fas fa-database skill-icon" style="color: #47A248;" aria-hidden="true"></i>
-                                    <div class="skill-name">MongoDB</div>
+                                    <div class="skill-name">MongoDB Atlas</div>
                                     <div class="skill-level">
                                         <div class="level-bar" data-level="80%"></div>
                                     </div>
                                 </div>
+
+                               
                                 
                                 <div class="skill-card" data-hover="Firebase">
                                     <i class="fas fa-fire skill-icon" style="color: #FFCA28;" aria-hidden="true"></i>
@@ -290,6 +345,14 @@
                                         <div class="level-bar" data-level="75%"></div>
                                     </div>
                                 </div>
+                                 <div class="skill-card" data-hover="Firebase Auth">
+    <i class="fas fa-user-lock skill-icon" style="color: #FFA000;" aria-hidden="true"></i>
+    <div class="skill-name">Firebase Auth</div>
+    <div class="skill-level">
+        <div class="level-bar" data-level="70%"></div>
+    </div>
+</div>
+
                             </div>
                         </div>
                         
@@ -352,55 +415,127 @@
                 </div>
             </div>
         </section>
+<!-- Experience Section -->
+<section id="experience" class="section neon-bg" aria-labelledby="experience-heading">
+  <div class="container">
+    <h2 id="experience-heading" class="section-title">Experience<span class="neon-dot">.</span></h2>
 
-        <!-- Experience Section -->
-        <section id="experience" class="section neon-bg" aria-labelledby="experience-heading">
-            <div class="container">
-                <h2 id="experience-heading" class="section-title">Experience<span class="neon-dot">.</span></h2>
-                
-                <div class="particles-container" aria-hidden="true">
-                    <div id="experience-particles"></div>
-                    
-                    <div class="experience-cards">
-                        <div class="experience-card" data-aos="fade-up">
-                            <div class="card-icon" aria-hidden="true">🎨</div>
-                            <h3>UI/UX Design Intern</h3>
-                            <h4>Retech Logistics</h4>
-                            <p>Mastered Figma and enhanced UI/UX design skills, focusing on user-centered design principles.</p>
-                            <div class="tech-stack">
-                                <span>Figma</span>
-                                <span>Prototyping</span>
-                                <span>Wireframing</span>
-                                <span>UX Research</span>
-                            </div>
-                        </div>
-                        
-                        <div class="experience-card" data-aos="fade-up" data-aos-delay="100">
-                            <div class="card-icon" aria-hidden="true">💻</div>
-                            <h3>Admin Block Portal Developer</h3>
-                            <p>Developed the frontend for the Admin Block Portal at my college, ensuring a responsive, modern, and interactive UI.</p>
-                            <div class="tech-stack">
-                                <span>HTML</span>
-                                <span>CSS</span>
-                                <span>JavaScript</span>
-                                <span>Bootstrap</span>
-                            </div>
-                        </div>
-                        
-                        
-                        
-                        <div class="experience-card" data-aos="fade-up" data-aos-delay="300">
-                            <div class="card-icon" aria-hidden="true">🎤</div>
-                            <h3>GDG On-Campus Event Host</h3>
-                            <p>Organized and hosted Google Developer Group (GDG) events at my college, connecting students with industry experts.</p>
-                        </div>
-                        
-                       
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <!-- Particles Background -->
+    <div class="particles-container" aria-hidden="true">
+      <div id="experience-particles"></div>
+    </div>
+
+    <!-- Experience Cards Wrapper -->
+    <div class="experience-cards">
+
+        <!-- Full Stack Freelancer -->
+<div class="experience-card" data-aos="fade-up" data-aos-delay="200">
+  <div class="card-icon" aria-hidden="true">💼</div>
+  <h3>Full Stack Freelancer</h3>
+  <h4>Portfolio & Web Design Projects <span style="font-weight: normal; color: #888;">| Ongoing</span></h4>
+  <p>Designing and developing modern, high-performance portfolios and web interfaces tailored to client needs. Emphasis on UI/UX, SEO, accessibility, and responsiveness using the latest front-end technologies.</p>
+  
+  <div class="tech-stack">
+    <span>React</span>
+    <span>Vite</span>
+    <span>Tailwind CSS</span>
+    <span>Framer Motion</span>
+    <span>TypeScript</span>
+    <span>Redux Toolkit</span>
+    <span>React Router</span>
+    <span>ShadCN/UI</span>
+  </div>
+
+  <div style="margin-top: 1rem;">
+    <a href="#contact" class="btn-neon" style="display: inline-block;">📅 Book Appointment</a>
+  </div>
+</div>
+
+
+        <!-- Web & App Developer Intern -->
+<div class="experience-card" data-aos="fade-up" data-aos-delay="100">
+  <div class="card-icon" aria-hidden="true">🌐</div>
+  <h3>Web & App Developer Intern</h3>
+  <h4>TravelEase (MERN App) <span style="font-weight: normal; color: #888;">| May 2025 – Present</span></h4>
+  <p>Currently building a full-stack travel application that enables users to pool trips and select destinations collaboratively, using the MERN stack.</p>
+  <div class="tech-stack">
+    <span>React</span>
+    <span>Redux Toolkit</span>
+    <span>Node.js</span>
+    <span>Express.js</span>
+    <span>MongoDB</span>
+  </div>
+</div>
+
+      
+      <!-- UI/UX Design Intern -->
+      <div class="experience-card" data-aos="fade-up">
+        <div class="card-icon" aria-hidden="true">🎨</div>
+        <h3>UI/UX Design Intern</h3>
+        <h4>Retech Logistics <span style="font-weight: normal; color: #888;">| Mar 2024 – Apr 2025</span></h4>
+        <p>Mastered Figma and enhanced UI/UX design skills, focusing on user-centered design principles.</p>
+        <div class="tech-stack">
+          <span>Figma</span>
+          <span>Prototyping</span>
+          <span>Wireframing</span>
+          <span>UX Research</span>
+        </div>
+      </div>
+
+      <!-- Attendance App Developer -->
+      <div class="experience-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="card-icon" aria-hidden="true">📱</div>
+        <h3>Attendance App Developer</h3>
+        <p>Currently working on a geofencing-based attendance app for my college to make tracking efficient and smart.</p>
+        <div class="tech-stack">
+          <span>HTML</span>
+          <span>CSS</span>
+          <span>JavaScript</span>
+          <span>Bootstrap</span>
+          <span>Node.js</span>
+          <span>Express.js</span>
+          <span>Google Maps API</span>
+          <span>Google Cloud</span>
+        </div>
+      </div>
+
+      <!-- Core GDG Member & Hack2Skill Organizer -->
+<div class="experience-card" data-aos="fade-up" data-aos-delay="200">
+  <div class="card-icon" aria-hidden="true">🚀</div>
+  <h3>Core Member – Google Developer Groups</h3>
+  <h4>GDG | Hack2Skill | On-Campus Lead</h4>
+ <p>Core member of Google Developer Groups (GDG), organizing events like <strong>Hack2Skill</strong> and <strong>GDG On-Campus</strong> to foster tech culture through workshops, talks, and hands-on sessions.</p>
+ <div class="tech-stack">
+    <span>Community Building</span>
+    <span>Event Management</span>
+    <span>Hackathons</span>
+    <span>Public Speaking</span>
+    <span>Collaboration</span>
+  </div>
+</div>
+
+<!-- AWS Cloud Practitioner -->
+<div class="experience-card" data-aos="fade-up" data-aos-delay="300">
+  <div class="card-icon" aria-hidden="true">☁️</div>
+  <h3>AWS Certified Cloud Practitioner</h3>
+  <p>Officially certified by AWS and currently diving deeper toward becoming a Solutions Architect. Skilled in core cloud concepts like EC2, S3, IAM, VPC, and architectural best practices.</p>
+  <div class="tech-stack">
+    <span>AWS</span>
+    <span>EC2</span>
+    <span>S3</span>
+    <span>IAM</span>
+    <span>VPC</span>
+    <span>Cloud Architecture</span>
+  </div>
+</div>
+
+
+      
+    </div>
+  </div>
+</section>
+
+
 
         <!-- Achievements Section -->
         <section id="achievements" class="section" aria-labelledby="achievements-heading">
@@ -410,7 +545,7 @@
                 <div class="achievements-container">
                     <!-- Achievement 1 -->
                     <div class="achievement-card" data-aos="flip-left">
-                        <h3>🚀 Hack A Cloud – 🏆 Champion</h3>
+                        <h3>🚀 Hack A Cloud – 🏆 2nd Place</h3>
                         <p>
                             Designed and deployed a scalable multi-cloud solution (AWS, Azure, GCP) with CI/CD and monitoring.
                         </p>
@@ -432,7 +567,20 @@
                             <li>🔹 Node.js, Bootstrap</li>
                         </ul>
                     </div>
-            
+             
+    <!-- Achievement: Gen Brainiacs Hackathon '25 Winner -->
+<div class="achievement-card" data-aos="flip-left" data-aos-delay="100">
+    <h3>🏆 Gen Brainiacs Hackathon '25 – 🥇 Winner</h3>
+    <p>
+        Developed <strong>Uzhavan Conect</strong>, an innovative project enhancing agricultural connectivity and farmer collaboration. This hackathon was conducted by the <strong>Google Developers Group</strong>.
+    </p>
+    <ul>
+        <li>🔹 React, Redux Toolkit, Node.js</li>
+        <li>🔹 MongoDB, Express.js, Tailwind CSS</li>
+    </ul>
+</div>
+
+
                     <!-- Achievement 3 -->
                     <div class="achievement-card" data-aos="flip-left" data-aos-delay="200">
                         <h3>👋 Orientation Host</h3>
@@ -489,7 +637,7 @@
                                 </div>
                                 
                                 <div class="project-links">
-                                    <a href="https://github.com/yourrepo/attendance-system" class="btn-project">
+                                    <a href="https://github.com/abdulshhhh/smart-attendance-geofencing-code.git" class="btn-project">
                                         <i class="fab fa-github" aria-hidden="true"></i> GitHub
                                     </a>
                                 </div>
@@ -526,7 +674,7 @@
                                 </div>
                                 
                                 <div class="project-links">
-                                    <a href="https://github.com/yourrepo/fitness-tracker" class="btn-project">
+                                    <a href="https://github.com/abdulshhhh/secret-dashboard-ui.git" class="btn-project">
                                         <i class="fab fa-github" aria-hidden="true"></i> GitHub
                                     </a>
                                 </div>  
@@ -548,7 +696,7 @@
                             
                             <div class="project-card-back">
                                 <h3>Uzhavan Connect</h3>
-                                <p>A farmer-to-consumer platform with <b>NABARD loan eligibility checker</b>, <b>real-time market pricing</b>, and <b>direct product listings</b> to empower rural agriculture.</p>
+                                <p>A farmer-to-consumer platform with <b>NABARD loan eligibility checker</b>, <b>real-time market pricing</b>, and <b>direct product listings</b> to empower rural agriculture which is totally voice automated</p>
                                 
                                 <div class="tech-stack">
                                     <span>HTML</span>
