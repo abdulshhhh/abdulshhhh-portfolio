@@ -906,51 +906,6 @@
     border-radius: 3px;
 }
 
-.about-image-container {
-    width: 220px;
-    height: 220px;
-    border-radius: 50%;
-    overflow: hidden;
-    position: relative;
-    margin-bottom: 1.5rem;
-    box-shadow: 0 0 30px rgba(99, 102, 241, 0.5);
-    transition: all 0.5s ease;
-    border: 3px solid rgba(255, 255, 255, 0.1);
-}
-
-.about-image-container:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 50px rgba(99, 102, 241, 0.7);
-}
-
-.about-profile-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0;
-    transform: scale(0.8);
-    transition: all 1s ease;
-}
-
-.about-image-container::before {
-    content: '';
-    position: absolute;
-    top: -5px;
-    left: -5px;
-    right: -5px;
-    bottom: -5px;
-    background: linear-gradient(45deg, var(--accent-color), #6366f1, #8b5cf6);
-    z-index: -1;
-    border-radius: 50%;
-    opacity: 0.7;
-    animation: pulse 4s infinite;
-    filter: blur(10px);
-}
-
-.reveal-image .about-profile-image {
-    opacity: 1;
-    transform: scale(1);
-}
 
 /* About Content */
 .about-content {
@@ -3072,59 +3027,7 @@
 }
 /* 🔥 Enhanced Neon Project Form Styling - Premium CSS with Advanced Animations */
 
-#freelance-form {
-  position: relative;
-  background: radial-gradient(ellipse at center, 
-              rgba(15, 12, 41, 0.95) 0%, 
-              rgba(48, 43, 99, 0.95) 50%, 
-              rgba(36, 36, 62, 0.95) 100%);
-  color: #fff;
-  overflow: hidden;
-  padding: 6rem 1rem;
-  z-index: 1;
-  border-top: 1px solid rgba(0, 255, 247, 0.2);
-  border-bottom: 1px solid rgba(0, 255, 247, 0.2);
-}
 
-#freelance-form::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: 
-    linear-gradient(135deg, rgba(0,255,247,0.03) 0%, transparent 50%, rgba(0,199,255,0.03) 100%),
-    url('https://cdn.jsdelivr.net/gh/VincentGarreau/particles.js/demo/particles/img/bg.jpg') center/cover no-repeat;
-  opacity: 0.08;
-  z-index: 0;
-  animation: subtleBgMove 30s infinite alternate;
-}
-
-#freelance-form::after {
-  content: "";
-  position: absolute;
-  top: -50%; left: -50%;
-  width: 200%; height: 200%;
-  background: radial-gradient(circle at center, 
-              rgba(0, 255, 247, 0.05) 0%, 
-              transparent 70%);
-  animation: pulseGlow 15s infinite alternate;
-  z-index: 0;
-}
-
-#freelance-form .container {
-  position: relative;
-  z-index: 2;
-  max-width: 750px;
-  margin: 0 auto;
-  padding: 2.5rem;
-  background: rgba(15, 12, 41, 0.6);
-  backdrop-filter: blur(12px);
-  border-radius: 20px;
-  border: 1px solid rgba(0, 255, 247, 0.2);
-  box-shadow: 
-    0 10px 30px rgba(0, 0, 0, 0.3),
-    inset 0 0 15px rgba(0, 255, 247, 0.1);
-  animation: fadeSlideUp 1s ease-out both;
-}
 
 .section-title {
   font-size: 2.8rem;
@@ -3164,129 +3067,6 @@
   margin-right: auto;
   animation: fadeIn 1.5s ease both;
   animation-delay: 0.3s;
-}
-
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  animation: fadeSlideUp 1.5s ease both;
-  animation-delay: 0.5s;
-}
-
-.form-group {
-  position: relative;
-}
-
-.contact-form input,
-.contact-form select,
-.contact-form textarea {
-  width: 100%;
-  padding: 1rem 1.2rem;
-  border: 2px solid rgba(0, 255, 247, 0.4);
-  border-radius: 12px;
-  background-color: rgba(0, 0, 0, 0.2);
-  color: #fff;
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.05rem;
-  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
-  box-shadow: 
-    0 0 8px rgba(0, 255, 247, 0.2),
-    inset 0 0 5px rgba(0, 255, 247, 0.1);
-}
-
-.contact-form input::placeholder,
-.contact-form textarea::placeholder {
-  color: rgba(255, 255, 255, 0.5);
-}
-
-.contact-form input:focus,
-.contact-form select:focus,
-.contact-form textarea:focus {
-  outline: none;
-  border-color: #00fff7;
-  background-color: rgba(0, 0, 0, 0.3);
-  box-shadow: 
-    0 0 15px rgba(0, 255, 247, 0.5),
-    inset 0 0 10px rgba(0, 255, 247, 0.2);
-  transform: translateY(-2px);
-}
-
-.contact-form textarea {
-  min-height: 150px;
-  resize: vertical;
-}
-
-.form-group label {
-  position: absolute;
-  top: -10px;
-  left: 15px;
-  background: #0f0c29;
-  padding: 0 8px;
-  font-size: 0.9rem;
-  color: #00fff7;
-  z-index: 1;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.3s ease;
-}
-
-.form-group:focus-within label {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.btn-submit {
-  position: relative;
-  padding: 1rem 2rem;
-  background: linear-gradient(135deg, #00fff7 0%, #00c9ff 100%);
-  color: #000;
-  border: none;
-  border-radius: 50px;
-  font-size: 1.1rem;
-  font-weight: 600;
-  font-family: 'Poppins', sans-serif;
-  cursor: pointer;
-  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
-  box-shadow: 
-    0 5px 20px rgba(0, 255, 247, 0.4),
-    0 0 30px rgba(0, 255, 247, 0.3);
-  overflow: hidden;
-  margin-top: 1rem;
-  z-index: 1;
-}
-
-.btn-submit::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, 
-              transparent, 
-              rgba(255, 255, 255, 0.2), 
-              transparent);
-  transition: all 0.6s ease;
-  z-index: -1;
-}
-
-.btn-submit:hover {
-  transform: translateY(-3px);
-  box-shadow: 
-    0 8px 25px rgba(0, 255, 247, 0.6),
-    0 0 50px rgba(0, 255, 247, 0.4);
-}
-
-.btn-submit:hover::before {
-  left: 100%;
-}
-
-.btn-submit:active {
-  transform: translateY(1px);
-  box-shadow: 
-    0 3px 15px rgba(0, 255, 247, 0.4),
-    0 0 30px rgba(0, 255, 247, 0.2);
 }
 
 /* Enhanced Animations */
@@ -3369,38 +3149,7 @@
   z-index: 0;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  #freelance-form {
-    padding: 4rem 1rem;
-  }
-  
-  #freelance-form .container {
-    padding: 2rem 1.5rem;
-    border-radius: 15px;
-  }
-  
-  .section-title {
-    font-size: 2.2rem;
-  }
-  
-  .contact-intro {
-    font-size: 1rem;
-    margin-bottom: 2rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .contact-form input,
-  .contact-form select,
-  .contact-form textarea {
-    padding: 0.8rem 1rem;
-  }
-  
-  .btn-submit {
-    padding: 0.9rem 1.5rem;
-    font-size: 1rem;
-  }
+/* 
 }
 /* === GSAP Loader Style === */
 #gsap-loader {
@@ -3533,15 +3282,46 @@
   50% { opacity: 0; }
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .description {
-    font-size: 1.4rem;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  
-  .static-text {
-    margin-bottom: 0.5rem;
-  }
+/* 🔹 Section Styling */
+.section {
+    padding: 60px 20px;
+    text-align: center;
+    color: #00ccff;
+    border-radius: 15px;
+}
+
+/* 🔹 Title Styling */
+.section-title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #222;
+}
+
+/* 🔹 Intro & Details Styling */
+.freelance-intro, .freelance-details {
+    font-size: 18px;
+    color: #00e1ff;
+    margin-top: 15px;
+}
+
+/* 🔹 Action Buttons */
+.action-buttons {
+    margin-top: 30px;
+}
+
+.btn-neon {
+    display: inline-block;
+    margin: 10px;
+    padding: 12px 20px;
+    font-size: 18px;
+    color: ;
+    text-decoration: none;
+    border-radius: 50px;
+    background: linear-gradient(45deg, #00aaff, #0ff);
+    transition: 0.3s ease;
+    border: none;
+}
+
+.btn-neon:hover {
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.7);
 }
