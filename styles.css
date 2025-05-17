@@ -2055,13 +2055,51 @@
     box-shadow: 0 0 25px rgba(0, 255, 255, 0.6);
 }
 
-/* Project Image */
+/* Enhanced Project Images - More Aesthetic & Bold */
 .project-image {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 10px;
-    border: 2px solid rgba(0, 255, 255, 0.5);
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 2px solid rgba(0, 255, 255, 0.5);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  filter: contrast(1.1) saturate(1.2);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 255, 255, 0.2);
+}
+
+.project-card:hover .project-image {
+  transform: scale(1.05);
+  border-color: rgba(0, 255, 255, 0.8);
+  filter: contrast(1.2) saturate(1.4) brightness(1.1);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4), 0 0 30px rgba(0, 255, 255, 0.4);
+}
+
+/* Image Overlay Effect */
+.project-card-front {
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card-front::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 255, 255, 0.2) 0%,
+    transparent 50%,
+    rgba(249, 18, 145, 0.2) 100%
+  );
+  z-index: 1;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.project-card:hover .project-card-front::after {
+  opacity: 0.8;
 }
 
 /* Project Info */
@@ -2454,22 +2492,61 @@
             height: 100%;
             border-radius: 50%;
             object-fit: cover;
-            filter: grayscale(100%);
-            transition: filter 1s ease, transform 0.5s ease;
+            filter: grayscale(100%) contrast(1.1);
+            transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             border: 5px solid rgba(249, 18, 145, 0.3);
             box-shadow: 0 0 30px rgba(249, 18, 145, 0.5);
         }
 
         .profile-img:hover {
-            filter: grayscale(0%);
-            transform: scale(1.05);
+            filter: grayscale(0%) contrast(1.2) saturate(1.2);
+            transform: scale(1.05) rotate(-2deg);
+            border-width: 3px;
+            border-color: rgba(249, 18, 145, 0.8);
+            box-shadow: 0 0 40px rgba(249, 18, 145, 0.7);
         }
 
-       
-       
-       
-      
-        
+        /* About Image Enhancement */
+        .about-profile-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transform: scale(0.8);
+            transition: all 1s ease;
+            filter: contrast(1.1) saturate(1.1);
+        }
+
+        .reveal-image .about-profile-image {
+            opacity: 1;
+            transform: scale(1);
+            filter: contrast(1.2) saturate(1.2);
+        }
+
+        /* Achievement Card Images */
+        .achievement-card img {
+            border-radius: 8px;
+            transition: all 0.4s ease;
+            filter: contrast(1.1) saturate(1.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .achievement-card:hover img {
+            transform: scale(1.05);
+            filter: contrast(1.2) saturate(1.3);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Pulsating Border for Images */
+        @keyframes borderPulse {
+            0% { box-shadow: 0 0 0 0 rgba(0, 255, 255, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(0, 255, 255, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(0, 255, 255, 0); }
+        }
+
+        .project-image:hover {
+            animation: borderPulse 1.5s infinite;
+        }
         /* Custom Cursor */
         .cursor {
             position: fixed;
@@ -3323,5 +3400,148 @@
   .btn-submit {
     padding: 0.9rem 1.5rem;
     font-size: 1rem;
+  }
+}
+/* === GSAP Loader Style === */
+#gsap-loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #0a0a0a;
+  color: #0ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  font-family: 'Orbitron', monospace;
+}
+
+.loader-text {
+  font-size: 2.5rem;
+  text-align: center;
+  line-height: 1.4;
+}
+
+.loader-sub {
+  font-size: 1.2rem;
+  color: #0ff;
+}
+
+/* ⚡ Flicker Glow Animation */
+.neon-flicker {
+  animation: flicker 1.5s infinite alternate;
+  text-shadow:
+    0 0 5px #0ff,
+    0 0 10px #0ff,
+    0 0 20px #0ff,
+    0 0 40px #0ff;
+}
+
+@keyframes flicker {
+  0%   { opacity: 1; }
+  45%  { opacity: 0.6; text-shadow: 0 0 5px #0ff; }
+  70%  { opacity: 0.85; text-shadow: 0 0 10px #0ff; }
+  100% { opacity: 1; text-shadow: 0 0 20px #0ff, 0 0 40px #0ff; }
+}
+/* Glowing Circle Cursor */
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  background: #0ff;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  mix-blend-mode: difference;
+  box-shadow: 0 0 8px #0ff, 0 0 20px #0ff;
+  transition: transform 0.1s ease-out;
+}
+
+/* Click Pop Effect */
+.custom-cursor.click {
+  transform: scale(2.2);
+  opacity: 0.6;
+}
+
+/* Canvas Trail */
+#cursor-trail {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9998;
+}
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 14px;
+  height: 14px;
+  background: #0ff;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  mix-blend-mode: difference;
+  transition: transform 0.08s ease-out;
+  box-shadow: 0 0 6px #0ff, 0 0 12px #0ff;
+}
+
+/* Typewriter Container */
+.description {
+  font-size: 1.8rem;
+  min-height: 2.5rem;
+  display: flex;
+  align-items: center;
+  margin: 1.5rem 0;
+}
+
+/* Static text styling */
+.static-text {
+  color: rgba(255, 255, 255, 0.8);
+  margin-right: 0.5rem;
+  font-weight: 400;
+}
+
+/* Dynamic typewriter text */
+#typewriter {
+  color: #00fff7;
+  font-weight: 600;
+  text-shadow: 0 0 10px rgba(0, 255, 247, 0.3);
+  position: relative;
+}
+
+/* Animated cursor */
+.cursor {
+  display: inline-block;
+  width: 3px;
+  height: 2rem;
+  background: #00fff7;
+  margin-left: 4px;
+  animation: cursorPulse 1.5s infinite;
+  vertical-align: middle;
+  box-shadow: 0 0 8px rgba(0, 255, 247, 0.8);
+}
+
+@keyframes cursorPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .description {
+    font-size: 1.4rem;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .static-text {
+    margin-bottom: 0.5rem;
   }
 }

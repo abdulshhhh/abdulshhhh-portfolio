@@ -9,6 +9,8 @@
     <meta name="keywords" content="portfolio, web developer, cloud, full stack, Abdul Kamil">
     <meta name="author" content="Abdul Kamil">
     <title>Abdul Kamil - Full Stack Developer Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+
     
     <!-- Preload critical resources -->
     <link rel="preload" href="styles.css" as="style">
@@ -31,8 +33,21 @@
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
 </head>
 <body>
+    <!-- Loader / Landing Animation -->
+<div id="gsap-loader">
+  <h1 class="loader-text">
+    <span id="typed-name"></span>
+    <br>
+    <span class="loader-sub neon-flicker">Full Stack Dev ⚡</span>
+  </h1>
+</div>
+
+
+
     <!-- Skip to content link for accessibility -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
     
@@ -911,5 +926,57 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
     </script>
+ <script>
+  window.addEventListener("load", () => {
+    const loaderText = document.querySelector(".loader-text");
+    const loader = document.getElementById("gsap-loader");
+
+    // Animate the loader text
+    gsap.to(loaderText, {
+      opacity: 1,
+      scale: 1,
+      duration: 1.5,
+      ease: "power3.out",
+    });
+
+    // Wait a bit, then slide it up and remove
+    gsap.to("#gsap-loader", {
+      delay: 2.5,
+      y: "-100%",
+      duration: 1.2,
+      ease: "power2.inOut",
+      onComplete: () => {
+        loader.style.display = "none";
+      }
+    });
+  });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script>
+  window.addEventListener("load", () => {
+    // Typewriter effect
+    const typed = new Typed("#typed-name", {
+      strings: ["[ Abdulshhhh ]"],
+      typeSpeed: 100,
+      startDelay: 400,
+      showCursor: false
+    });
+
+    // Fade-out loader after delay
+    gsap.to("#gsap-loader", {
+      delay: 3,
+      y: "-100%",
+      duration: 1.2,
+      ease: "power2.inOut",
+      onComplete: () => {
+        document.getElementById("gsap-loader").style.display = "none";
+      }
+    });
+  });
+</script>
+
+
+
 </body>
 </html>
