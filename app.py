@@ -1,14 +1,18 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 import google.generativeai as genai
 from flask_cors import CORS
 
 app = Flask(__name__)
 CORS(app)
 
-# ✅ Set up Gemini with correct model
+# Gemini config
 genai.configure(api_key="AIzaSyBHuqzNGEA_qLWcfKYD3VPxcFdkPb_cXos")
 model = genai.GenerativeModel("models/gemini-1.5-flash")
 chat = model.start_chat(history=[])
+
+@app.route("/")
+def home():
+    return render_template("chatbot.html")
 
 @app.route('/ask', methods=['POST'])
 def ask_ai():
