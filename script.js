@@ -165,10 +165,19 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         e.preventDefault();
         const targetId = this.getAttribute('href');
         const targetElement = document.querySelector(targetId);
+
         if (targetElement) {
             targetElement.scrollIntoView({
                 behavior: 'smooth'
             });
+            
+            // Close mobile menu if open
+            const navLinks = document.querySelector('.nav-links');
+            const hamburger = document.querySelector('.hamburger');
+            if (navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+                hamburger.classList.remove('active');
+            }
         }
     });
 });
@@ -386,8 +395,8 @@ if (skillsCanvas) {
             particle.radius += Math.sin(Date.now() * 0.001) * particle.pulse;
             
             ctx.beginPath();
-            ctx.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
-            
+            ctx.arc(x, y, Math.max(0, radius), 0, Math.PI * 2);
+
             // Glow effect
             const gradient = ctx.createRadialGradient(
                 particle.x, particle.y, 0,
@@ -1399,4 +1408,53 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+});
+document.addEventListener("DOMContentLoaded", () => {
+  const filterButtons = document.querySelectorAll(".filter-btn");
+  const projects = document.querySelectorAll(".project-card");
+
+  filterButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      // Remove active class from all buttons
+      filterButtons.forEach((b) => b.classList.remove("active"));
+      // Add active to clicked one
+      btn.classList.add("active");
+
+      const filter = btn.getAttribute("data-filter");
+
+      projects.forEach((project) => {
+        const category = project.getAttribute("data-category");
+
+        if (filter === "all" || filter === category) {
+          project.style.display = "block";
+        } else {
+          project.style.display = "none";
+        }
+      });
+    });
+  });
+});
+document.addEventListener("DOMContentLoaded", () => {
+  const filterButtons = document.querySelectorAll(".filter-btn");
+  const projectCards = document.querySelectorAll(".project-card");
+
+  filterButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      // Make this button active
+      filterButtons.forEach((b) => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      const filter = btn.dataset.filter;
+
+      projectCards.forEach((card) => {
+        const categories = card.dataset.category.split(" ");
+
+        if (filter === "all" || categories.includes(filter)) {
+          card.style.display = "block";
+        } else {
+          card.style.display = "none";
+        }
+      });
+    });
+  });
 });

@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
     <meta name="description" content="Abdul Kamil's Portfolio - Full Stack Developer & Cloud Enthusiast">
     <meta name="keywords" content="portfolio, web developer, cloud, full stack, Abdul Kamil">
     <meta name="author" content="Abdul Kamil">
@@ -10,7 +12,6 @@
     
     <!-- Preload critical resources -->
     <link rel="preload" href="styles.css" as="style">
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" as="style">
     
     <!-- Favicon with multiple sizes -->
@@ -47,7 +48,7 @@
     
     <!-- Navigation Bar -->
     <nav class="navbar" aria-label="Main navigation">
-        <div class="logo" aria-label="Abdul Kamil logo">AK</div>
+        <div class="logo" aria-label="Abdul Kamil logo">Abdulshhhh</div>
         <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
             <div class="bar"></div>
             <div class="bar"></div>
@@ -446,9 +447,14 @@
     <span>ShadCN/UI</span>
   </div>
 
-  <div style="margin-top: 1rem;">
-    <a href="#contact" class="btn-neon" style="display: inline-block;">📅 Book Appointment</a>
-  </div>
+ <!-- Booking Button -->
+<div style="margin-top: 1rem;">
+  <a href="https://calendly.com/abdulshhhhh/new-meeting" class="btn-neon" style="display: inline-block;"
+     onclick="Calendly.initPopupWidget({url: 'https://calendly.com/abdulshhhhh/new-meeting'}); return false;">
+    📅 Book Appointment
+  </a>
+</div>
+
 </div>
 
 
@@ -537,194 +543,311 @@
 
 
 
-        <!-- Achievements Section -->
+        <!-- World-class Achievement Cards Section -->
         <section id="achievements" class="section" aria-labelledby="achievements-heading">
-            <div class="container">
-                <h2 id="achievements-heading" class="section-title">Achievements<span class="neon-dot">.</span></h2>
-            
-                <div class="achievements-container">
-                    <!-- Achievement 1 -->
-                    <div class="achievement-card" data-aos="flip-left">
-                        <h3>🚀 Hack A Cloud – 🏆 2nd Place</h3>
-                        <p>
-                            Designed and deployed a scalable multi-cloud solution (AWS, Azure, GCP) with CI/CD and monitoring.
-                        </p>
-                        <ul>
-                            <li>🔹 AWS, Azure, GCP</li>
-                            <li>🔹 Node.js, Express.js</li>
-                            <li>🔹 React.js, MongoDB</li>
-                        </ul>
-                    </div>
-            
-                    <!-- Achievement 2 -->
-                    <div class="achievement-card" data-aos="flip-left" data-aos-delay="100">
-                        <h3>🎯 Innothon '24 – 🥈 2nd Place</h3>
-                        <p>
-                            Smart Attendance System with face recognition & geofencing using Firebase and AWS services.
-                        </p>
-                        <ul>
-                            <li>🔹 Firebase, OpenCV, Rekognition</li>
-                            <li>🔹 Node.js, Bootstrap</li>
-                        </ul>
-                    </div>
-             
-    <!-- Achievement: Gen Brainiacs Hackathon '25 Winner -->
-<div class="achievement-card" data-aos="flip-left" data-aos-delay="100">
-    <h3>🏆 Gen Brainiacs Hackathon '25 – 🥇 Winner</h3>
-    <p>
-        Developed <strong>Uzhavan Conect</strong>, an innovative project enhancing agricultural connectivity and farmer collaboration. This hackathon was conducted by the <strong>Google Developers Group</strong>.
-    </p>
-    <ul>
-        <li>🔹 React, Redux Toolkit, Node.js</li>
-        <li>🔹 MongoDB, Express.js, Tailwind CSS</li>
-    </ul>
+  <div id="achievements-canvas" class="achievements-canvas"></div>
+  <div id="particles-js" class="particles-container"></div>
+  
+  <div class="container">
+    <h2 id="achievements-heading" class="section-title">Achievements<span class="neon-dot">.</span></h2>
+    
+    <div class="achievements-container">
+      <!-- Achievement 1: Hack A Cloud -->
+      <div class="achievement-card-wrapper" data-aos="fade-up">
+        <div class="achievement-card">
+          <!-- Front of Card -->
+          <div class="achievement-card-front">
+            <div class="card-content">
+              <div class="achievement-icon" style="color: #0ea5e9;">🚀</div>
+              <h3>Hack A Cloud – 2nd Place</h3>
+              <p>Designed and deployed a scalable multi-cloud solution with CI/CD pipelines and comprehensive monitoring.</p>
+              <ul class="tech-list">
+                <li>AWS</li>
+                <li>Azure</li>
+                <li>GCP</li>
+              </ul>
+              <button class="flip-btn" aria-label="See details">
+                <i class="fas fa-sync-alt"></i>
+              </button>
+            </div>
+            <div class="floating-element" style="top: 20%; left: 15%;"></div>
+            <div class="floating-element" style="top: 70%; left: 80%;"></div>
+          </div>
+          
+          <!-- Back of Card -->
+          <div class="achievement-card-back">
+            <div class="card-content">
+              <h3>Project Details</h3>
+              <p>Created a fault-tolerant, auto-scaling application that leverages the strengths of multiple cloud providers. Implemented CI/CD with GitHub Actions and monitoring with Prometheus and Grafana.</p>
+              <ul class="tech-list">
+                <li>Node.js</li>
+                <li>Express</li>
+                <li>React</li>
+                <li>MongoDB</li>
+              </ul>
+              <button class="flip-btn" aria-label="See front">
+                <i class="fas fa-sync-alt"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Achievement 2: Innothon -->
+      <div class="achievement-card-wrapper" data-aos="fade-up" data-aos-delay="100">
+        <div class="achievement-card">
+          <!-- Front of Card -->
+          <div class="achievement-card-front">
+            <div class="card-content">
+              <div class="achievement-icon" style="color: #8b5cf6;">🎯</div>
+              <h3>Innothon '24 – 2nd Place</h3>
+              <p>Smart Attendance System with face recognition & geofencing using Firebase and AWS services.</p>
+              <ul class="tech-list">
+                <li>Firebase</li>
+                <li>OpenCV</li>
+                <li>AWS</li>
+              </ul>
+              <button class="flip-btn" aria-label="See details">
+                <i class="fas fa-sync-alt"></i>
+              </button>
+            </div>
+            <div class="floating-element" style="top: 30%; left: 75%;"></div>
+            <div class="floating-element" style="top: 60%; left: 25%;"></div>
+          </div>
+          
+          <!-- Back of Card -->
+          <div class="achievement-card-back">
+            <div class="card-content">
+              <h3>Project Details</h3>
+              <p>Developed an intelligent attendance tracking system that combines facial recognition with geofencing to ensure accurate presence verification. Integrated with university systems for seamless reporting.</p>
+              <ul class="tech-list">
+                <li>Node.js</li>
+                <li>Bootstrap</li>
+                <li>Rekognition</li>
+              </ul>
+              <button class="flip-btn" aria-label="See front">
+                <i class="fas fa-sync-alt"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Achievement 3: Gen Brainiacs -->
+      <div class="achievement-card-wrapper" data-aos="fade-up" data-aos-delay="200">
+        <div class="achievement-card">
+          <!-- Front of Card -->
+          <div class="achievement-card-front">
+            <div class="card-content">
+              <div class="achievement-icon" style="color: #ec4899;">🏆</div>
+              <h3>Gen Brainiacs Hackathon – Winner</h3>
+              <p>Developed Uzhavan Connect, an innovative project enhancing agricultural connectivity and farmer collaboration.</p>
+              <ul class="tech-list">
+                <li>React</li>
+                <li>Redux</li>
+                <li>Node.js</li>
+              </ul>
+              <button class="flip-btn" aria-label="See details">
+                <i class="fas fa-sync-alt"></i>
+              </button>
+            </div>
+            <div class="floating-element" style="top: 15%; left: 65%;"></div>
+            <div class="floating-element" style="top: 75%; left: 35%;"></div>
+          </div>
+          
+          <!-- Back of Card -->
+          <div class="achievement-card-back">
+            <div class="card-content">
+              <h3>Project Details</h3>
+              <p>Created a platform that connects farmers with resources, markets, and each other. Features include crop prediction, market price analysis, and community forums. Conducted by the Google Developers Group.</p>
+              <ul class="tech-list">
+                <li>MongoDB</li>
+                <li>Express</li>
+                <li>Tailwind CSS</li>
+              </ul>
+              <button class="flip-btn" aria-label="See front">
+                <i class="fas fa-sync-alt"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Achievement 4: Orientation Host -->
+      <div class="achievement-card-wrapper" data-aos="fade-up" data-aos-delay="300">
+        <div class="achievement-card">
+          <!-- Front of Card -->
+          <div class="achievement-card-front">
+            <div class="card-content">
+              <div class="achievement-icon" style="color: #10b981;">👋</div>
+              <h3>Orientation Host</h3>
+              <p>Hosted technical orientation sessions for 200+ students and connected them with coding clubs.</p>
+              <ul class="tech-list">
+                <li>Public Speaking</li>
+                <li>Event Management</li>
+              </ul>
+              <button class="flip-btn" aria-label="See details">
+                <i class="fas fa-sync-alt"></i>
+              </button>
+            </div>
+            <div class="floating-element" style="top: 25%; left: 25%;"></div>
+            <div class="floating-element" style="top: 65%; left: 70%;"></div>
+          </div>
+          
+          <!-- Back of Card -->
+          <div class="achievement-card-back">
+            <div class="card-content">
+              <h3>Event Details</h3>
+              <p>Organized and led technical orientation sessions to introduce new students to programming concepts, campus tech resources, and coding clubs. Created engaging presentations and interactive demos.</p>
+              <ul class="tech-list">
+                <li>Leadership</li>
+                <li>Communication</li>
+                <li>Organization</li>
+              </ul>
+              <button class="flip-btn" aria-label="See front">
+                <i class="fas fa-sync-alt"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+      <section id="projects" class="section" aria-labelledby="projects-heading">
+  <div class="container">
+    <h2 id="projects-heading" class="section-title">Projects<span class="neon-dot">.</span></h2>
+
+    <!-- Filter Buttons -->
+    <div class="project-filter" role="tablist" aria-label="Project filter">
+      <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All</button>
+      <button class="filter-btn" data-filter="web" role="tab" aria-selected="false">Web</button>
+      <button class="filter-btn" data-filter="mobile" role="tab" aria-selected="false">Mobile</button>
+      <button class="filter-btn" data-filter="cloud" role="tab" aria-selected="false">Cloud</button>
+    </div>
+
+    <!-- Project Cards Grid -->
+    <div class="project-grid">
+      <!-- Card Template -->
+      <div class="project-card" data-category="web cloud">
+        <div class="project-card-inner">
+          <div class="project-card-front">
+            <img src="./images/sjce.png" alt="Smart Attendance System" class="project-image" />
+            <div class="project-overlay">
+              <h3>Smart Attendance System</h3>
+              <p class="short-desc">Geofencing + Face Recognition</p>
+              <span class="view-details">Click to View Details</span>
+            </div>
+          </div>
+          <div class="project-card-back">
+            <h3>Smart Attendance System</h3>
+            <p>Geofencing-based attendance using <b>Face Recognition, Firebase, AWS</b>, real-time dashboards, and full cloud CI/CD integration.</p>
+            <div class="tech-stack">
+              <span>HTML</span><span>CSS</span><span>JS</span><span>Node</span><span>Firebase</span><span>AWS</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/abdulshhhh/smart-attendance-geofencing-code.git" class="btn-project" target="_blank">
+                <i class="fab fa-github"></i> GitHub
+              </a>
+            </div>
+            <div class="achievement-badge">🥈 2nd Place - Innothon '24</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- More cards below ... just copy the same structure -->
+      <!-- Fitness App -->
+      <div class="project-card" data-category="web cloud">
+  <div class="project-card-inner">
+    <div class="project-card-front">
+      <img src="images\secreta.jpg"" alt="Secure Secret Share App" class="project-image" />
+      <div class="project-overlay">
+        <h3>One-Time Secret App</h3>
+        <p class="short-desc">AES-encrypted secure file & message sharing</p>
+        <span class="view-details">Click to View Details</span>
+      </div>
+    </div>
+    <div class="project-card-back">
+      <h3> Secreta -The Secret App</h3>
+      <p>
+        Create and share self-destructing secrets with <b>AES encryption</b>, <b>auto-expiring links</b>, and
+        <b>file upload support</b>. Includes QR code generation, optional <b>geo-locking</b>, and password
+        protection for ultimate privacy.
+      </p>
+      <div class="tech-stack">
+        <span>React</span>
+        <span>Tailwind CSS</span>
+        <span>Node.js</span>
+        <span>Express</span>
+        <span>MongoDB (TTL)</span>
+        <span>AES Crypto</span>
+        <span>AWS S3</span>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/abdulshhhh/secret-dashboard-ui.git" class="btn-project" target="_blank">
+          <i class="fab fa-github"></i> GitHub
+        </a>
+      </div>
+    </div>
+  </div>
 </div>
 
 
-                    <!-- Achievement 3 -->
-                    <div class="achievement-card" data-aos="flip-left" data-aos-delay="200">
-                        <h3>👋 Orientation Host</h3>
-                        <p>
-                            Hosted technical orientation sessions for 200+ students and connected them with coding clubs.
-                        </p>
-                        <ul>
-                            <li>🔹 Public Speaking</li>
-                            <li>🔹 Event Management</li>
-                        </ul>
-                    </div>
-                </div>
+      <!-- Uzhavan Connect -->
+      <div class="project-card" data-category="web">
+        <div class="project-card-inner">
+          <div class="project-card-front">
+            <img src="images\WhatsApp Image 2025-05-17 at 17.16.05_0c57c6da.jpg"" alt="Uzhavan Connect" class="project-image" />
+            <div class="project-overlay">
+              <h3>Uzhavan Connect</h3>
+              <p class="short-desc">Digital bridge for farmers</p>
+              <span class="view-details">Click to View Details</span>
             </div>
-        </section>
+          </div>
+          <div class="project-card-back">
+            <h3>Uzhavan Connect</h3>
+            <p>Voice-powered farmer marketplace with <b>NABARD loan checker</b>, <b>real-time pricing</b>, and <b>direct listings</b>.</p>
+            <div class="tech-stack">
+              <span>HTML</span><span>CSS</span><span>JS</span><span>Node</span><span>MongoDB</span><span>Firebase</span><span>AWS</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/codesam2005/UllavanConnect.git" class="btn-project" target="_blank">
+                <i class="fab fa-github"></i> GitHub Repo
+              </a>
+            </div>
+            <div class="achievement-badge">🏆 Gen Brainiacs Hackathon Winner</div>
+          </div>
+        </div>
+      </div>
 
-        <!-- Projects Section -->
-        <section id="projects" class="section" aria-labelledby="projects-heading">
-            <div class="container">
-                <h2 id="projects-heading" class="section-title">Projects<span class="neon-dot">.</span></h2>
-                
-                <div class="project-filter" role="tablist" aria-label="Project filter">
-                    <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All</button>
-                    <button class="filter-btn" data-filter="web" role="tab" aria-selected="false">Web</button>
-                    <button class="filter-btn" data-filter="mobile" role="tab" aria-selected="false">Mobile</button>
-                    <button class="filter-btn" data-filter="cloud" role="tab" aria-selected="false">Cloud</button>
-                </div>
-                
-                <div class="project-grid">
-                    <!-- Smart Attendance System -->
-                    <div class="project-card" data-category="web cloud" data-aos="zoom-in">
-                        <div class="project-card-inner">
-                            <div class="project-card-front">
-                                <img src="./images/sjce.png" alt="Smart Attendance System" class="project-image" width="400" height="300">
-                                <div class="project-overlay">
-                                    <h3>Smart Attendance System</h3>
-                                    <p class="short-desc">Geofencing-based attendance with face recognition</p>
-                                    <span class="view-details">Click to View Details</span>
-                                </div>
-                            </div>
-                            
-                            <div class="project-card-back">
-                                <h3>Smart Attendance System</h3>
-                                <p>A geofencing-based attendance system integrating <b>Face Recognition, Firebase, AWS Cloud</b>, and real-time monitoring.</p>
-                                
-                                <div class="tech-stack">
-                                    <span>HTML</span>
-                                    <span>CSS</span>
-                                    <span>JavaScript</span>
-                                    <span>Node.js</span>
-                                    <span>AWS</span>
-                                    <span>Firebase</span>
-                                    <span>Docker</span>
-                                    <span>CI/CD</span>
-                                </div>
-                                
-                                <div class="project-links">
-                                    <a href="https://github.com/abdulshhhh/smart-attendance-geofencing-code.git" class="btn-project">
-                                        <i class="fab fa-github" aria-hidden="true"></i> GitHub
-                                    </a>
-                                </div>
-                                
-                                <div class="achievement-badge">
-                                    <span>🥈 2nd Place - Innothon '24</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-            
-                    <!-- Fitness App -->
-                    <div class="project-card" data-category="mobile web" data-aos="zoom-in" data-aos-delay="100">
-                        <div class="project-card-inner">
-                            <div class="project-card-front">
-                                <img src="./images/fitness.jpg" alt="AI-Powered Fitness Tracker" class="project-image" width="400" height="300">
-                                <div class="project-overlay">
-                                    <h3>AI-Powered Fitness Tracker</h3>
-                                    <p class="short-desc">Smart fitness app with AI features</p>
-                                    <span class="view-details">Click to View Details</span>
-                                </div>
-                            </div>
-                            
-                            <div class="project-card-back">
-                                <h3>AI-Powered Fitness Tracker</h3>
-                                <p>A smart fitness application with an AI-based <b>BMI calculator, real-time trainer recommendations</b>, and a <b>social media integration</b>.</p>
-                                
-                                <div class="tech-stack">
-                                    <span>React.js</span>
-                                    <span>Tailwind CSS</span>
-                                    <span>Node.js</span>
-                                    <span>MongoDB</span>
-                                    <span>TensorFlow.js</span>
-                                </div>
-                                
-                                <div class="project-links">
-                                    <a href="https://github.com/abdulshhhh/secret-dashboard-ui.git" class="btn-project">
-                                        <i class="fab fa-github" aria-hidden="true"></i> GitHub
-                                    </a>
-                                </div>  
-                            </div>
-                        </div>
-                    </div>
-            
-                    <!-- Uzhavan Connect -->
-                    <div class="project-card" data-category="web" data-aos="zoom-in" data-aos-delay="200">
-                        <div class="project-card-inner">
-                            <div class="project-card-front">
-                                <img src="./images/uzhavan.jpg" alt="Uzhavan Connect" class="project-image" width="400" height="300">
-                                <div class="project-overlay">
-                                    <h3>Uzhavan Connect</h3>
-                                    <p class="short-desc">Empowering farmers through digital connectivity</p>
-                                    <span class="view-details">Click to View Details</span>
-                                </div>
-                            </div>
-                            
-                            <div class="project-card-back">
-                                <h3>Uzhavan Connect</h3>
-                                <p>A farmer-to-consumer platform with <b>NABARD loan eligibility checker</b>, <b>real-time market pricing</b>, and <b>direct product listings</b> to empower rural agriculture which is totally voice automated</p>
-                                
-                                <div class="tech-stack">
-                                    <span>HTML</span>
-                                    <span>CSS</span>
-                                    <span>JavaScript</span>
-                                    <span>Node.js</span>
-                                    <span>MongoDB</span>
-                                    <span>Firebase</span>
-                                    <span>AWS</span>
-                                </div>
-                                
-                                <div class="project-links">
-                                    <a href="https://github.com/yourrepo/uzhavan-connect" class="btn-project">
-                                        <i class="fab fa-github" aria-hidden="true"></i> GitHub
-                                    </a>
-                                </div>
-                                
-                                <div class="achievement-badge">
-                                    <span>🏆 Gen Brainiacs 2024 Hackathon Winner</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-    
+    </div> <!-- End project-grid -->
+  </div>
+</section>
+
+<section id="freelance-form" class="section">
+  <div class="container">
+    <h2 class="section-title">Freelancing Info<span class="neon-dot">.</span></h2>
+    <p class="contact-intro">Already booked a slot? Drop me your project details — I’ll come prepped.</p>
+
+    <form action="https://formspree.io/f/your-form-id" method="POST" class="contact-form">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <select name="project_type" required>
+        <option value="">Project Type</option>
+        <option value="portfolio">Portfolio Website</option>
+        <option value="ecom">E-commerce</option>
+        <option value="fullstack">Full Stack Web App</option>
+        <option value="ai">AI + Automation</option>
+        <option value="other">Other</option>
+      </select>
+      <textarea name="details" placeholder="Describe your project, timeline, budget..." rows="6" required></textarea>
+      <button type="submit" class="btn-submit">🚀 Send Details</button>
+    </form>
+  </div>
+</section>
+
+
     <!-- Footer -->
     <footer>
         <div class="container">
@@ -739,11 +862,20 @@
 
     <!-- Scripts -->
     <!-- Load scripts with defer for better performance -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js" defer></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
-    <script src="script.js" defer></script>
+     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init();</script>
+
+<!-- ✅ Calendly (must load first, no async or defer) -->
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript"></script>
+
+<!-- ✅ Then load your other deferred scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js" defer></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+<script src="script.js" defer></script>
+
     
     <!-- Initialize AOS animation -->
     <script>
@@ -757,6 +889,27 @@
                 });
             }
         });
+        // Add this to your existing JavaScript
+document.addEventListener('DOMContentLoaded', function() {
+    // Get the book appointment button
+    const bookAppointmentBtn = document.getElementById('bookAppointmentBtn');
+    
+    // If the button exists
+    if (bookAppointmentBtn) {
+        bookAppointmentBtn.addEventListener('click', function(e) {
+            e.preventDefault(); // Prevent default behavior if it's a link
+            
+            // Replace with your actual Calendly URL
+            const calendlyUrl = 'https://calendly.com/abdulshhhhh/new-meeting';
+            
+            // Open Calendly in a new tab
+            window.open(calendlyUrl, '_blank');
+            
+            // Alternatively, redirect in the same tab:
+            // window.location.href = calendlyUrl;
+        });
+    }
+});
     </script>
 </body>
 </html>
