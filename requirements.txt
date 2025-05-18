@@ -1,5 +1,5 @@
-# In your repository root, create a 'requirements.txt' with:
 flask
 google-generativeai
 flask-cors
 python-dotenv
+gunicorn
