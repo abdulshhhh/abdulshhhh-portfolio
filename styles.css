@@ -3292,36 +3292,92 @@
 
 /* 🔹 Title Styling */
 .section-title {
-    font-size: 28px;
+    font-size: px;
     font-weight: bold;
     color: #222;
 }
 
-/* 🔹 Intro & Details Styling */
-.freelance-intro, .freelance-details {
-    font-size: 18px;
+/* 🌟 Freelancing Section */
+#freelancing {
+    padding: 60px 20px;
+    background: transparent; /* Allows JS animations to shine */
     color: #00e1ff;
-    margin-top: 15px;
+    text-align: center;
 }
 
-/* 🔹 Action Buttons */
+/* 💡 Section Title */
+.section-title {
+    font-size: 32px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.neon-dot {
+    color: #ff0077;
+    font-size: 40px;
+    animation: blink 1.5s infinite alternate;
+}
+
+/* 🔥 Tech Stack List */
+.freelance-details {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 600px;
+    margin: auto;
+}
+
+.freelance-details li {
+    padding: 10px 14px;
+    margin: 8px;
+    border-radius: 8px;
+    background: rgba(0, 225, 255, 0.1);
+    backdrop-filter: blur(6px);
+    font-size: 16px;
+    font-weight: bold;
+    transition: 0.3s ease-in-out;
+}
+
+/* 🎨 Icon Styling */
+.freelance-details li::before {
+    content: attr(data-icon);
+    font-size: 20px;
+    animation: float 2s infinite alternate;
+}
+
+/* 🚀 Buttons */
 .action-buttons {
-    margin-top: 30px;
+    margin-top: 25px;
 }
 
 .btn-neon {
     display: inline-block;
-    margin: 10px;
-    padding: 12px 20px;
-    font-size: 18px;
-    color: ;
+    padding: 12px 18px;
+    font-size: 16px;
+    color: #fff;
     text-decoration: none;
-    border-radius: 50px;
+    border-radius: 8px;
     background: linear-gradient(45deg, #00aaff, #0ff);
     transition: 0.3s ease;
-    border: none;
 }
 
 .btn-neon:hover {
-    box-shadow: 0 0 15px rgba(0, 255, 255, 0.7);
+    box-shadow: 0 0 12px rgba(0, 255, 255, 0.7);
+    transform: scale(1.05);
 }
+
+/* ✨ Blinking Neon Animation */
+@keyframes blink {
+    0% { opacity: 1; }
+    100% { opacity: 0.4; }
+}
+
+/* 🔄 Floating Animation */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    100% { transform: translateY(-5px); }
+}
+
