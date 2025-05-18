@@ -1,5 +1,5 @@
-flask
-google-generativeai
-flask-cors
-python-dotenv
-gunicorn
+flask==2.3.2
+google-generativeai==0.3.2
+flask-cors==4.0.0
+python-dotenv==1.0.0
+gunicorn==21.2.0
