@@ -1,3 +1,4 @@
+import os
 from flask import Flask, request, jsonify, render_template
 import google.generativeai as genai
 from flask_cors import CORS
@@ -12,7 +13,7 @@ chat = model.start_chat(history=[])
 
 @app.route("/")
 def home():
-    return render_template("chatbot.html")
+    return render_template("index.html")
 
 @app.route('/ask', methods=['POST'])
 def ask_ai():
@@ -49,4 +50,5 @@ User's project idea:
         return jsonify({"response": f"Error: {str(e)}"}), 500
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 10000))  # Default to port 10000 if not specified
+    app.run(host="0.0.0.0", port=port, debug=True)
