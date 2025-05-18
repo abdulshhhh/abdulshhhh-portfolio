@@ -1,19 +1,23 @@
 import os
-from flask import Flask, request, jsonify, render_template
+from flask import Flask, request, jsonify, render_template, send_from_directory
 import google.generativeai as genai
 from flask_cors import CORS
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder="static")
 CORS(app)
 
-# Gemini config
-genai.configure(api_key="AIzaSyBHuqzNGEA_qLWcfKYD3VPxcFdkPb_cXos")
+# Gemini config - consider using environment variables for the API key
+genai.configure(api_key=os.getenv("GEMINI_API_KEY", "YOUR_API_KEY"))  # Replace with actual key or use env var
 model = genai.GenerativeModel("models/gemini-1.5-flash")
 chat = model.start_chat(history=[])
 
 @app.route("/")
 def home():
     return render_template("index.html")
+
+@app.route("/static/<path:filename>")
+def static_files(filename):
+    return send_from_directory(app.static_folder, filename)
 
 @app.route('/ask', methods=['POST'])
 def ask_ai():
