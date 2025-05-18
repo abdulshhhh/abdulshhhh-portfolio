@@ -1,15 +1,16 @@
 import os
-from flask import Flask, request, jsonify, render_template, send_from_directory
+from flask import Flask, request, jsonify, render_template
 import google.generativeai as genai
 from flask_cors import CORS
 
-app = Flask(__name__, static_folder="static")
+# 🔹 Flask App Setup
+app = Flask(__name__, template_folder="templates", static_folder="static")
 CORS(app)
 
 # 🔒 Secure API Key Handling with immediate validation
 api_key = os.getenv("GEMINI_API_KEY")
 if not api_key:
-    raise ValueError("GEMINI_API_KEY environment variable is required")
+    raise RuntimeError("❌ ERROR: GEMINI_API_KEY not found! Set it in your environment.")
 
 genai.configure(api_key=api_key)
 model = genai.GenerativeModel("models/gemini-1.5-flash")
@@ -19,11 +20,11 @@ chat = model.start_chat(history=[])
 def home():
     """Serve the main index.html page"""
     return render_template("index.html")
+@app.route("/chatbot")
+def chatbot():
+    """Serve chatbot.html correctly"""
+    return render_template("chatbot.html")
 
-@app.route("/static/<path:filename>")
-def serve_static(filename):
-    """Serve static files with proper security"""
-    return send_from_directory(app.static_folder, filename)
 
 @app.route('/ask', methods=['POST'])
 def ask_ai():
@@ -34,7 +35,6 @@ def ask_ai():
     - Logging
     - Consistent JSON responses
     """
-    # Validate request format
     if not request.is_json:
         return jsonify({
             "status": "error",
@@ -42,7 +42,6 @@ def ask_ai():
             "code": 400
         }), 400
 
-    # Parse and validate input
     data = request.get_json()
     user_input = data.get("question", "").strip()
 
@@ -53,7 +52,6 @@ def ask_ai():
             "code": 400
         }), 400
 
-    # Structured prompt template
     prompt = f"""
 You are AbdulBot – a friendly expert full-stack developer based in India.
 Specializing in helping clients realize digital products with:
@@ -71,7 +69,6 @@ Project Details:
 """
 
     try:
-        # Get AI response
         response = chat.send_message(prompt)
         return jsonify({
             "status": "success",
@@ -80,7 +77,6 @@ Project Details:
         })
     
     except Exception as e:
-        # Detailed error logging
         app.logger.error(f"AI processing failed: {str(e)}", exc_info=True)
         return jsonify({
             "status": "error",
@@ -93,7 +89,7 @@ if __name__ == '__main__':
     # Configurable deployment settings
     port = int(os.getenv("PORT", 10000))
     debug = os.getenv("FLASK_DEBUG", "false").strip().lower() == "true"
-    
+
     # Production optimizations
     if not debug:
         app.config.update(
