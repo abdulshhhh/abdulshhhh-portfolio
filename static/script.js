@@ -486,7 +486,9 @@ function initializeEnhancedCursor() {
         .custom-cursor-active .nav-link,
         .custom-cursor-active input,
         .custom-cursor-active textarea,
-        .custom-cursor-active .project
+        .custom-cursor-active .project {
+          cursor: none !important;
+        }
       `;
       document.head.appendChild(style);
     }
@@ -629,4 +631,34 @@ document.addEventListener('DOMContentLoaded', () => {
     cancelAnimationFrame(animationFrame);
     clearInterval(cursorInterval);
   };
+});
+
+// Card Flip functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const flipBtns = document.querySelectorAll('.flip-btn');
+    
+    flipBtns.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            const card = this.closest('.achievement-card');
+            card.classList.toggle('is-flipped');
+        });
+    });
+});
+
+// Achievement Card Flip
+document.addEventListener('DOMContentLoaded', function() {
+  const achievementCards = document.querySelectorAll('.achievement-card');
+  
+  achievementCards.forEach(card => {
+    const flipBtns = card.querySelectorAll('.flip-btn');
+    
+    flipBtns.forEach(btn => {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        card.classList.toggle('is-flipped');
+      });
+    });
+  });
 });
