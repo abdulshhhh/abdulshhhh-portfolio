@@ -1,20 +1,10 @@
 import os
 from flask import Flask, request, jsonify, render_template
-import google.generativeai as genai
 from flask_cors import CORS
 
 # 🔹 Flask App Setup
 app = Flask(__name__, template_folder="templates", static_folder="static")
 CORS(app)
-
-# 🔒 Secure API Key Handling with immediate validation
-api_key = os.getenv("GEMINI_API_KEY")
-if not api_key:
-    raise RuntimeError("❌ ERROR: GEMINI_API_KEY not found! Set it in your environment.")
-
-genai.configure(api_key=api_key)
-model = genai.GenerativeModel("models/gemini-1.5-flash")
-chat = model.start_chat(history=[])
 
 @app.route("/")
 def home():
@@ -68,22 +58,15 @@ Project Details:
 \"\"\"
 """
 
-    try:
-        response = chat.send_message(prompt)
-        return jsonify({
-            "status": "success",
-            "response": response.text.strip(),
-            "code": 200
-        })
-    
-    except Exception as e:
-        app.logger.error(f"AI processing failed: {str(e)}", exc_info=True)
-        return jsonify({
-            "status": "error",
-            "response": "Service temporarily unavailable",
-            "details": str(e) if app.debug else None,
-            "code": 500
-        }), 500
+    return jsonify({
+        "status": "success",
+        "response": (
+            f"Thanks for your question about {user_input}. "
+            "This is a demo chatbot for Abdul Kamil's portfolio. "
+            "For a project discussion, please use the booking link or contact Abdul directly."
+        ),
+        "code": 200
+    })
 
 if __name__ == '__main__':
     # Configurable deployment settings

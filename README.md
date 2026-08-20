@@ -50,8 +50,8 @@ git clone --depth 1 https://github.com/abdulshhhh/abdulshhhh-portfolio.git && cd
 python -m venv .venv && source .venv/bin/activate  # Linux/Mac
 python -m venv .venv && .venv\Scripts\activate    # Windows
 
-# 3️⃣ Install with dark energy
-pip install -r requirements.txt && echo "GEMINI_API_KEY=your_key_here" > .env
+# 3️⃣ Install dependencies
+pip install -r requirements.txt
 
 # 4️⃣ Launch singularity
 flask run --host=0.0.0.0 --port=10000
