@@ -1,5 +1,6 @@
 flask==2.3.2
 google-generativeai==0.3.2
+protobuf==4.25.3
 flask-cors==4.0.0
 python-dotenv==1.0.0
 gunicorn==21.2.0
